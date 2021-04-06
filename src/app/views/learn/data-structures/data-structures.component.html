@@ -1,0 +1,424 @@
+<div class="animated fadeIn">
+    <div class="row">
+        <div class="col-sm-6">
+            <div class="card">
+            <div class="card-header">
+                <b style="font-size: 17px;">Linear</b>
+            </div>
+            <div class="card-body">
+                <carousel [interval]="false" [isAnimated]="true">
+                <slide>
+                    <div class="text-center py-5 bg-dark text-white">
+                        <h2><b>Array</b></h2>
+                        <div class="lead">
+                            <br>
+                            <h5>Array is Collection of homogenous elements.</h5>
+                            <br>
+                            <button type="button" class="btn btn-light mr-1" data-toggle="modal" (click)="ArrayModal.show()">
+                                Know More
+                            </button>
+                        </div>
+                    </div>
+                </slide>
+
+                <slide>
+                    <div class="text-center py-5 bg-dark text-white">
+                        <h2><b>Linked Lists</b></h2>
+                        <div class="lead">
+                            <br>
+                            <h5>Linked List is list of items linked together.</h5>
+                            <br>
+                            <button type="button" class="btn btn-light mr-1" data-toggle="modal" (click)="LLModal.show()">
+                                Know More
+                            </button>
+                        </div>
+                    </div>
+                    </slide>
+
+                    <slide>
+                        <div class="text-center py-5 bg-dark text-white">
+                            <h2><b>Stack</b></h2>
+                            <div class="lead">
+                                <br>
+                                <h5>Stack is Last-In-First-Out structure</h5>
+                                <br>
+                                <button type="button" class="btn btn-light mr-1" data-toggle="modal" (click)="StackModal.show()">
+                                    Know More
+                                </button>
+                            </div>
+                        </div>
+                        </slide>
+
+                        <slide>
+                            <div class="text-center py-5 bg-dark text-white">
+                                <h2><b>Queue</b></h2>
+                                <div class="lead">
+                                    <br>
+                                    <h5>Queue is First-In-First-Out structure.</h5>
+                                    <br>
+                                    <button type="button" class="btn btn-light mr-1" data-toggle="modal" (click)="QueueModal.show()">
+                                        Know More
+                                    </button>
+                                </div>
+                            </div>
+                        </slide>
+                </carousel>
+            </div>
+            </div>
+        </div>
+
+        <div class="col-sm-6">
+            <div class="card">
+            <div class="card-header">
+                <b style="font-size: 17px;">Non-Linear</b>
+            </div>
+            <div class="card-body">
+                <carousel [interval]="false">
+                    <slide>
+                        <div class="text-center py-5 bg-dark text-white">
+                            <h2><b>Tree</b></h2>
+                            <div class="lead">
+                                <br>
+                                <h5>A tree is used to represent hierarchical data. </h5>
+                                <br>
+                                <button type="button" class="btn btn-light mr-1" data-toggle="modal" (click)="TreeModal.show()">
+                                    Know More
+                                </button>
+                            </div>
+                        </div>
+                    </slide>
+
+                    <slide>
+                        <div class="text-center py-5 bg-dark text-white">
+                            <h2><b>Graph</b></h2>
+                            <div class="lead">
+                                <br>
+                                <h5>In a graph, pairs of vertices are connected by edges. </h5>
+                                <br>
+                                <button type="button" class="btn btn-light mr-1" data-toggle="modal" (click)="GraphModal.show()">
+                                    Know More
+                                </button>
+                            </div>
+                        </div>
+                    </slide>
+
+                    <slide>
+                        <div class="text-center py-5 bg-dark text-white">
+                            <h2><b>Map</b></h2>
+                            <div class="lead">
+                                <br>
+                                <h5>A map contains values on the basis key-value pair.</h5>
+                                <br>
+                                <button type="button" class="btn btn-light mr-1" data-toggle="modal" (click)="MapModal.show()">
+                                    Know More
+                                </button>
+                            </div>
+                        </div>
+                    </slide>
+
+                    <slide>
+                        <div class="text-center py-5 bg-dark text-white">
+                            <h2><b>Heap</b></h2>
+                            <div class="lead">
+                                <br>
+                                <h5>A heap is a specialized tree-based data structure.</h5>
+                                <br>
+                                <button type="button" class="btn btn-light mr-1" data-toggle="modal" (click)="HeapModal.show()">
+                                    Know More
+                                </button>
+                            </div>
+                        </div>
+                    </slide>
+
+                </carousel>
+            </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!--ArrayModal-->
+<div bsModal #ArrayModal="bs-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dark modal-lg" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title w-100 text-center">Array</h4>
+          <button type="button" class="close" (click)="ArrayModal.hide()" aria-label="Close">
+            <span aria-hidden="true" style="color: white;">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+            <img src="/assets/img/dsa/array.jpg" alt="Array" style="display: block; width: 100%;"><br>
+          <h5> • An array is a collection of items stored at contiguous memory locations. <br>
+              • It stores multiple items of the same type together. <br>
+              • Arrays allow random access to elements. This makes accessing elements by position faster. <br>
+              • Arrays represent multiple data items of the same type using a single name. <br>
+              • Insertion and deletion are quite difficult in an array as the elements are stored in consecutive memory locations. <br>
+              </h5>
+        </div>
+        <div class="modal-footer">
+            <a href="https://www.geeksforgeeks.org/array-data-structure/" target="_blank"> 
+                <button type="button" class="btn btn-success">
+                    GeeksForGeeks
+                </button>
+            </a> 
+
+            <a href="https://www.programiz.com/cpp-programming/arrays" target="_blank"> 
+                <button type="button" class="btn btn-primary">
+                    Programiz
+                </button>
+            </a>
+        </div>
+      </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+  </div><!-- /.Arraymodal -->
+
+
+<!--LLModal-->
+<div bsModal #LLModal="bs-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dark modal-lg" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title w-100 text-center">Linked Lists</h4>
+          <button type="button" class="close" (click)="LLModal.hide()" aria-label="Close">
+            <span aria-hidden="true" style="color: white;">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+            <img src="/assets/img/dsa/linkedlist.png" alt="LinkedLists" style="display: block; width: 100%;">
+          <h5> • Linked List is list of items linked together. <br>
+              • Each item in linked list is called as Node. <br>
+              • Each node contains data and pointer/reference to the next node. <br>
+              • Each item in linked list is called as Node. <br>
+              • Each node contains data and pointer/reference to the next node. <br>
+          </h5>
+        </div>
+        <div class="modal-footer">
+            <a href="https://www.geeksforgeeks.org/data-structures/linked-list/" target="_blank"> 
+                <button type="button" class="btn btn-success">
+                    GeeksForGeeks
+                </button>
+            </a> 
+
+            <a href="https://www.programiz.com/dsa/linked-list" target="_blank"> 
+                <button type="button" class="btn btn-primary">
+                    Programiz
+                </button>
+            </a>
+        </div>
+      </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+  </div><!-- /.LLmodal -->
+
+
+<!--StackModal-->
+<div bsModal #StackModal="bs-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dark modal-lg" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title w-100 text-center">Stack</h4>
+          <button type="button" class="close" (click)="StackModal.hide()" aria-label="Close">
+            <span aria-hidden="true" style="color: white;">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+            <img src="/assets/img/dsa/stack.png" alt="Stack" style="display: block; width: 100%;">
+          <h5> • Stack is a linear data structure which follows a particular order in which the operations are performed. <br>
+              • The order may be LIFO (Last In First Out) or FILO (First In Last Out).<br>
+              • Here, the element which is placed (inserted or added) last, is accessed first. <br>
+              • In stack terminology, insertion operation is called PUSH operation and removal operation is called POP operation. <br>
+              • A stack can be easily implemented either through an array or a linked list. </h5>
+        </div>
+        <div class="modal-footer">
+            <a href="https://www.geeksforgeeks.org/stack-data-structure/" target="_blank"> 
+                <button type="button" class="btn btn-success">
+                    GeeksForGeeks
+                </button>
+            </a> 
+
+            <a href="https://www.programiz.com/dsa/stack" target="_blank"> 
+                <button type="button" class="btn btn-primary">
+                    Programiz
+                </button>
+            </a>
+        </div>
+      </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+  </div><!-- /.Stackmodal -->
+
+<!--QueueModal-->
+<div bsModal #QueueModal="bs-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dark modal-lg" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title w-100 text-center">Queue</h4>
+          <button type="button" class="close" (click)="QueueModal.hide()" aria-label="Close">
+            <span aria-hidden="true" style="color: white;">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+            <img src="/assets/img/dsa/queue.png" alt="Queue" style="display: block; width: 100%;">
+          <h5> • A Queue is a linear structure which follows a particular order in which the operations are performed. <br>
+              • The order is First In First Out (FIFO). <br>
+              • Unlike stacks, a queue is open at both its ends.<br>
+              • One end is always used to insert data (enqueue) and the other is used to remove data (dequeue). <br>
+              • A queue can also be implemented using Arrays, Linked-lists, Pointers and Structures. <br></h5>
+        </div>
+        <div class="modal-footer">
+            <a href="https://www.geeksforgeeks.org/queue-data-structure/" target="_blank"> 
+                <button type="button" class="btn btn-success">
+                    GeeksForGeeks
+                </button>
+            </a> 
+
+            <a href="https://www.programiz.com/dsa/queue" target="_blank"> 
+                <button type="button" class="btn btn-primary">
+                    Programiz
+                </button>
+            </a>
+        </div>
+      </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.Queuemodal -->
+
+<!--TreeModal-->
+<div bsModal #TreeModal="bs-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dark modal-lg" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title w-100 text-center">Tree</h4>
+          <button type="button" class="close" (click)="TreeModal.hide()" aria-label="Close">
+            <span aria-hidden="true" style="color: white;">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+            <img src="/assets/img/dsa/tree.jpg" alt="Tree" style="display: block; width: 100%;"><br>
+          <h5> • A tree is a nonlinear hierarchical data structure that consists of nodes connected by edges. <br>
+              • A binary tree has a special condition that each node can have a maximum of two children.<br>
+              • A node is an entity that contains a key or value and pointers to its child nodes. <br>
+              • In order to perform any operation on a tree, you need to reach to the specific node. <br>
+              • The height of a node is the number of edges from the node to the deepest leaf.<br></h5>
+        </div>
+        <div class="modal-footer">
+            <a href="https://www.geeksforgeeks.org/binary-tree-data-structure/" target="_blank"> 
+                <button type="button" class="btn btn-success">
+                    GeeksForGeeks
+                </button>
+            </a> 
+
+            <a href="https://www.programiz.com/dsa/trees" target="_blank"> 
+                <button type="button" class="btn btn-primary">
+                    Programiz
+                </button>
+            </a>
+        </div>
+      </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.Treemodal -->
+
+<!--GraphModal-->
+<div bsModal #GraphModal="bs-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dark modal-lg" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title w-100 text-center">Graph</h4>
+          <button type="button" class="close" (click)="GraphModal.hide()" aria-label="Close">
+            <span aria-hidden="true" style="color: white;">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+            <img src="/assets/img/dsa/graph.png" alt="Graph" style="display: block; width: 100%;">
+          <h5> • A graph is a pictorial representation of a set of objects where some pairs of objects are connected by links. <br>
+              • The interconnected objects are represented by points termed as vertices. <br>
+              • The links that connect the vertices are called edges. <br>
+              • Formally, a graph is a pair of sets (V, E), where V is the set of vertices and E is the set of edges, connecting the pairs of vertices. <br>
+              • We can represent a graph using an array of vertices and a two-dimensional array of edges. <br></h5>
+        </div>
+        <div class="modal-footer">
+            <a href="https://www.geeksforgeeks.org/graph-data-structure-and-algorithms/" target="_blank"> 
+                <button type="button" class="btn btn-success">
+                    GeeksForGeeks
+                </button>
+            </a> 
+
+            <a href="https://www.programiz.com/dsa/graph" target="_blank"> 
+                <button type="button" class="btn btn-primary">
+                    Programiz
+                </button>
+            </a>
+        </div>
+      </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.Graphmodal -->
+
+<!--MapModal-->
+<div bsModal #MapModal="bs-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dark modal-lg" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title w-100 text-center">Map</h4>
+          <button type="button" class="close" (click)="MapModal.hide()" aria-label="Close">
+            <span aria-hidden="true" style="color: white;">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+            <img src="/assets/img/dsa/map.png" height="400" alt="Map" style="display: block; width: 100%;">
+          <h5> • A Map is a type of fast key lookup data structure that offers a flexible means of indexing into its individual elements. <br>
+              • Indices into the elements of a Map are called keys. <br>
+              • These keys, along with the data values associated with them, are stored within the Map.<br>
+              • Maps are implemented using arrays.<br>
+              • The idea is to mathematically convert the key into a numeric value (called hash) which is within the size of our array and store the value at that index in the array.<br></h5>
+        </div>
+        <div class="modal-footer">
+            <a href="https://www.geeksforgeeks.org/map-interface-java-examples/" target="_blank"> 
+                <button type="button" class="btn btn-success">
+                    GeeksForGeeks
+                </button>
+            </a> 
+
+            <a href="https://www.programiz.com/java-programming/map" target="_blank"> 
+                <button type="button" class="btn btn-primary">
+                    Programiz
+                </button>
+            </a>
+        </div>
+      </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.Mapmodal -->
+
+
+<!--HeapModal-->
+<div bsModal #HeapModal="bs-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dark modal-lg" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title w-100 text-center">Map</h4>
+          <button type="button" class="close" (click)="HeapModal.hide()" aria-label="Close">
+            <span aria-hidden="true" style="color: white;">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+            <img src="/assets/img/dsa/heap.png" alt="Heap" style="display: block; width: 100%;">
+          <h5> • A Heap is a special Tree-based data structure in which the tree is a complete binary tree.<br>
+              • Generally, Heaps can be of two types- Max Heap and Min Heap <br>
+              • In a Max-Heap the key present at the root node must be greatest among the keys present at all of it’s children. <br>
+              • In a Min-Heap the key present at the root node must be minimum among the keys present at all of it’s children. <br>
+              • Heapify is the process of creating a heap data structure from a binary tree. It is used to create a Min-Heap or a Max-Heap.</h5>
+        </div>
+        <div class="modal-footer">
+            <a href="https://www.geeksforgeeks.org/heap-data-structure/" target="_blank"> 
+                <button type="button" class="btn btn-success">
+                    GeeksForGeeks
+                </button>
+            </a> 
+
+            <a href="https://www.programiz.com/dsa/heap-data-structure" target="_blank"> 
+                <button type="button" class="btn btn-primary">
+                    Programiz
+                </button>
+            </a>
+        </div>
+      </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.Heapmodal -->

@@ -1,0 +1,575 @@
+<div class="animated fadeIn">
+    <div class="row">
+        <div class="col-sm-6">
+            <div class="card">
+            <div class="card-header">
+                <b style="font-size: 17px;">Sorting</b>
+            </div>
+            <div class="card-body">
+                <carousel [interval]="false" [isAnimated]="true">
+                <slide>
+                    <div class="text-center py-5 bg-dark text-white">
+                        <h2><b>Selection Sort</b></h2>
+                        <div class="lead">
+                            <br>
+                            <h5>Time Complexity: O(n2)</h5>
+                            <br>
+                            <button type="button" class="btn btn-light mr-1" data-toggle="modal" (click)="SelectionSortModal.show()">
+                                Know More
+                            </button>
+                        </div>
+                    </div>
+                </slide>
+
+                <slide>
+                    <div class="text-center py-5 bg-dark text-white">
+                        <h2><b>Bubble Sort</b></h2>
+                        <div class="lead">
+                            <br>
+                            <h5>Time Complexity: O(n2)</h5>
+                            <br>
+                            <button type="button" class="btn btn-light mr-1" data-toggle="modal" (click)="BubbleSortModal.show()">
+                                Know More
+                            </button>
+                        </div>
+                    </div>
+                    </slide>
+
+                    <slide>
+                        <div class="text-center py-5 bg-dark text-white">
+                            <h2><b>Merge Sort</b></h2>
+                            <div class="lead">
+                                <br>
+                                <h5>Time Complexity: O(nlog(n))</h5>
+                                <br>
+                                <button type="button" class="btn btn-light mr-1" data-toggle="modal" (click)="MergeSortModal.show()">
+                                    Know More
+                                </button>
+                            </div>
+                        </div>
+                        </slide>
+
+                        <slide>
+                            <div class="text-center py-5 bg-dark text-white">
+                                <h2><b>Quick Sort</b></h2>
+                                <div class="lead">
+                                    <br>
+                                    <h5>Time Complexity: O(nlog(n))</h5>
+                                    <br>
+                                    <button type="button" class="btn btn-light mr-1" data-toggle="modal" (click)="QuickSortModal.show()">
+                                        Know More
+                                    </button>
+                                </div>
+                            </div>
+                        </slide>
+                </carousel>
+            </div>
+            </div>
+        </div>
+
+        <div class="col-sm-6">
+            <div class="card">
+            <div class="card-header">
+                <b style="font-size: 17px;">Searching</b>
+            </div>
+            <div class="card-body">
+                <carousel [interval]="false">
+                    <slide>
+                        <div class="text-center py-5 bg-dark text-white">
+                            <h2><b>Linear Search</b></h2>
+                            <div class="lead">
+                                <br>
+                                <h5>Time Complexity: O(n)</h5>
+                                <br>
+                                <button type="button" class="btn btn-light mr-1" data-toggle="modal" (click)="LinearSearchModal.show()">
+                                    Know More
+                                </button>
+                            </div>
+                        </div>
+                    </slide>
+
+                    <slide>
+                        <div class="text-center py-5 bg-dark text-white">
+                            <h2><b>Binary Search</b></h2>
+                            <div class="lead">
+                                <br>
+                                <h5>Time Complexity: O(log(n))</h5>
+                                <br>
+                                <button type="button" class="btn btn-light mr-1" data-toggle="modal" (click)="BinarySearchModal.show()">
+                                    Know More
+                                </button>
+                            </div>
+                        </div>
+                    </slide>
+
+                </carousel>
+            </div>
+            </div>
+        </div>
+    </div>
+
+    <!--ROW END-->
+
+    <div class="row">
+        <div class="col-sm-6">
+            <div class="card">
+            <div class="card-header">
+                <b style="font-size: 17px;">Back Tracking</b>
+            </div>
+            <div class="card-body">
+                <carousel [interval]="false" [isAnimated]="true">
+                <slide>
+                    <div class="text-center py-5 bg-dark text-white">
+                        <h2><b>Back Tracking</b></h2>
+                        <div class="lead">
+                            <br>
+                            <h5>Algorithm for finding all solutions to some computational problems</h5>
+                            <br>
+                            <button type="button" class="btn btn-light mr-1" data-toggle="modal" (click)="BackTrackingModal.show()">
+                                Know More
+                            </button>
+                        </div>
+                    </div>
+                </slide>
+                </carousel>
+            </div>
+            </div>
+        </div>
+
+        <div class="col-sm-6">
+            <div class="card">
+            <div class="card-header">
+                <b style="font-size: 17px;">Greedy</b>
+            </div>
+            <div class="card-body">
+                <carousel [interval]="false">
+                    <slide>
+                        <div class="text-center py-5 bg-dark text-white">
+                            <h2><b>Greedy</b></h2>
+                            <div class="lead">
+                                <br>
+                                <h5>Intuitive algorithm that is used in optimization problems.</h5>
+                                <br>
+                                <button type="button" class="btn btn-light mr-1" data-toggle="modal" (click)="GreedyModal.show()">
+                                    Know More
+                                </button>
+                            </div>
+                        </div>
+                    </slide>
+                </carousel>
+            </div>
+            </div>
+        </div>
+    </div>
+
+    <!--ROW END-->
+
+    <div class="row">
+        <div class="col-sm-6">
+            <div class="card">
+            <div class="card-header">
+                <b style="font-size: 17px;">Dynamic Programming</b>
+            </div>
+            <div class="card-body">
+                <carousel [interval]="false" [isAnimated]="true">
+                <slide>
+                    <div class="text-center py-5 bg-dark text-white">
+                        <h2><b>Dynamic Programming</b></h2>
+                        <div class="lead">
+                            <br>
+                            <h5>Dynamic Programming is an optimization over plain recursion</h5>
+                            <br>
+                            <button type="button" class="btn btn-light mr-1" data-toggle="modal" (click)="DPModal.show()">
+                                Know More
+                            </button>
+                        </div>
+                    </div>
+                </slide>
+                </carousel>
+            </div>
+            </div>
+        </div>
+
+        <div class="col-sm-6">
+            <div class="card">
+            <div class="card-header">
+                <b style="font-size: 17px;">Divide & Conquer</b>
+            </div>
+            <div class="card-body">
+                <carousel [interval]="false">
+                    <slide>
+                        <div class="text-center py-5 bg-dark text-white">
+                            <h2><b>Divide & Conquer</b></h2>
+                            <div class="lead">
+                                <br>
+                                <h5>Divide and Conquer is an algorithm design paradigm</h5>
+                                <br>
+                                <button type="button" class="btn btn-light mr-1" data-toggle="modal" (click)="DCModal.show()">
+                                    Know More
+                                </button>
+                            </div>
+                        </div>
+                    </slide>
+                </carousel>
+            </div>
+            </div>
+        </div>
+    </div>
+
+    <!--ROW END-->
+
+</div>
+
+
+<!--SelectionSortModal-->
+<div bsModal #SelectionSortModal="bs-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dark modal-lg" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title w-100 text-center">Selection Sort</h4>
+          <button type="button" class="close" (click)="SelectionSortModal.hide()" aria-label="Close">
+            <span aria-hidden="true" style="color: white;">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+            <img src="/assets/img/dsa/selectionsort.png" alt="SelectionSort" style="display: block; width: 100%;"><br>
+          <h5> • The selection sort algorithm sorts an array by repeatedly finding the minimum element from unsorted part and putting it at the beginning.<br>
+              • In every iteration of selection sort, the minimum element (considering ascending order) from the unsorted subarray is picked and moved to the sorted subarray.  <br>
+              • Selection sort is an in-place comparison sorting algorithm. <br>
+              • The good thing about selection sort is it never makes more than O(n) swaps. <br>
+              • It can be useful when memory write is a costly operation. <br>
+              </h5>
+        </div>
+        <div class="modal-footer">
+            <a href="https://www.geeksforgeeks.org/selection-sort/" target="_blank"> 
+                <button type="button" class="btn btn-success">
+                    GeeksForGeeks
+                </button>
+            </a> 
+
+            <a href="https://www.programiz.com/dsa/selection-sort" target="_blank"> 
+                <button type="button" class="btn btn-primary">
+                    Programiz
+                </button>
+            </a>
+        </div>
+      </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+  </div><!-- /.SelectionSortModal -->
+
+
+<!--BubbleSortModal-->
+<div bsModal #BubbleSortModal="bs-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dark modal-lg" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title w-100 text-center">Bubble Sort</h4>
+          <button type="button" class="close" (click)="BubbleSortModal.hide()" aria-label="Close">
+            <span aria-hidden="true" style="color: white;">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+            <img src="/assets/img/dsa/bubblesort.png" alt="BubbleSort" style="display: block; width: 100%;">
+          <h5> •  Bubble sort is a basic algorithm for arranging a string of numbers or other elements in the correct order. <br>
+              • The method works by examining each set of adjacent elements in the string, from left to right, switching their positions if they are out of order. <br>
+              • The algorithm then repeats this process until it can run through the entire string and find no two elements that need to be swapped.  <br>
+              • Due to its simplicity, bubble sort is often used to introduce the concept of a sorting algorithm. <br>
+              • In computer graphics it is popular for its capability to detect a very small error. <br>
+          </h5>
+        </div>
+        <div class="modal-footer">
+            <a href="https://www.geeksforgeeks.org/bubble-sort/" target="_blank"> 
+                <button type="button" class="btn btn-success">
+                    GeeksForGeeks
+                </button>
+            </a> 
+
+            <a href="https://www.programiz.com/dsa/bubble-sort" target="_blank"> 
+                <button type="button" class="btn btn-primary">
+                    Programiz
+                </button>
+            </a>
+        </div>
+      </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+  </div><!-- /.BubbleSortModal -->
+
+
+<!--MergeSortModal-->
+<div bsModal #MergeSortModal="bs-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dark modal-lg" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title w-100 text-center">Merge Sort</h4>
+          <button type="button" class="close" (click)="MergeSortModal.hide()" aria-label="Close">
+            <span aria-hidden="true" style="color: white;">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+            <img src="/assets/img/dsa/mergesort.png" alt="mergesort" style="display: block; width: 100%;">
+          <h5> • Merge sort is one of the most efficient sorting algorithms.<br>
+              • It works on the principle of Divide and Conquer.<br>
+              • The idea is to break down the problem into atomic subproblems, where they are actually solved.<br>
+              • Combine the solutions of the subproblems to find the solution of the actual problem.<br> </h5>
+        </div>
+        <div class="modal-footer">
+            <a href="https://www.geeksforgeeks.org/merge-sort/" target="_blank"> 
+                <button type="button" class="btn btn-success">
+                    GeeksForGeeks
+                </button>
+            </a> 
+
+            <a href="https://www.programiz.com/dsa/merge-sort" target="_blank"> 
+                <button type="button" class="btn btn-primary">
+                    Programiz
+                </button>
+            </a>
+        </div>
+      </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+  </div><!-- /.MergeSortModal -->
+
+<!--QuickSortModal-->
+<div bsModal #QuickSortModal="bs-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dark modal-lg" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title w-100 text-center">Quick Sort</h4>
+          <button type="button" class="close" (click)="QuickSortModal.hide()" aria-label="Close">
+            <span aria-hidden="true" style="color: white;">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+            <img src="/assets/img/dsa/quicksort.png" alt="quicksort" style="display: block; width: 100%;">
+          <h5> • Quicksort is a divide-and-conquer algorithm.<br>
+              • It works by selecting a 'pivot' element from the array and partitioning the other elements into two sub-arrays, according to whether they are less than or greater than the pivot. <br>
+              • The sub-arrays are then sorted recursively.<br>
+              • This can be done in-place, requiring small additional amounts of memory to perform the sorting.</h5>
+        </div>
+        <div class="modal-footer">
+            <a href="https://www.geeksforgeeks.org/quick-sort/" target="_blank"> 
+                <button type="button" class="btn btn-success">
+                    GeeksForGeeks
+                </button>
+            </a> 
+
+            <a href="www.programiz.com/dsa/quick-sort" target="_blank"> 
+                <button type="button" class="btn btn-primary">
+                    Programiz
+                </button>
+            </a>
+        </div>
+      </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.QuickSortModal -->
+
+<!--LinearSearchModal-->
+<div bsModal #LinearSearchModal="bs-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dark modal-lg" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title w-100 text-center">Linear Search</h4>
+          <button type="button" class="close" (click)="LinearSearchModal.hide()" aria-label="Close">
+            <span aria-hidden="true" style="color: white;">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+            <img src="/assets/img/dsa/linearsearch.png" alt="linearsearch" style="display: block; width: 100%;"><br>
+          <h5> • Linear search is the simplest searching algorithm that searches for an element in a list in sequential order.<br>
+              • We start at one end and check every element until the desired element is not found.<br>
+              • Every item is checked and if a match is found then that particular item is returned.<br>
+              • Otherwise the search continues till the end of the data collection. </h5>
+        </div>
+        <div class="modal-footer">
+            <a href="https://www.geeksforgeeks.org/linear-search/" target="_blank"> 
+                <button type="button" class="btn btn-success">
+                    GeeksForGeeks
+                </button>
+            </a> 
+
+            <a href="https://www.programiz.com/dsa/linear-search" target="_blank"> 
+                <button type="button" class="btn btn-primary">
+                    Programiz
+                </button>
+            </a>
+        </div>
+      </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.LinearSearchModal -->
+
+<!--BinarySearchModal-->
+<div bsModal #BinarySearchModal="bs-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dark modal-lg" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title w-100 text-center">Binary Search</h4>
+          <button type="button" class="close" (click)="BinarySearchModal.hide()" aria-label="Close">
+            <span aria-hidden="true" style="color: white;">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+            <img src="/assets/img/dsa/binarysearch.jpeg" alt="binarysearch" style="display: block; width: 100%;"><br>
+          <h5> • Binary Search is a searching algorithm for finding an element's position in a sorted array.<br>
+              • Search a sorted array by repeatedly dividing the search interval in half. <br>
+              • Begin with an interval covering the whole array. <br>
+              • If the value of the search key is less than the item in the middle of the interval, narrow the interval to the lower half. Otherwise narrow it to the upper half.<br>
+              • Repeatedly check until the value is found or the interval is empty. </h5>
+        </div>
+        <div class="modal-footer">
+            <a href=" https://www.geeksforgeeks.org/binary-search/" target="_blank"> 
+                <button type="button" class="btn btn-success">
+                    GeeksForGeeks
+                </button>
+            </a> 
+
+            <a href="https://www.programiz.com/dsa/binary-search" target="_blank"> 
+                <button type="button" class="btn btn-primary">
+                    Programiz
+                </button>
+            </a>
+        </div>
+      </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.BinarySearchModal -->
+
+
+
+<!--BackTrackingModal-->
+<div bsModal #BackTrackingModal="bs-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dark modal-lg" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title w-100 text-center">Back Tracking</h4>
+          <button type="button" class="close" (click)="BackTrackingModal.hide()" aria-label="Close">
+            <span aria-hidden="true" style="color: white;">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+            <img src="/assets/img/dsa/backtracking.png" alt="backtracking" style="display: block; width: 100%;"><br>
+          <h5> • Backtracking is a general algorithm for finding all solutions to some computational problems. <br>
+              • Problems that incrementally builds candidates to the solutions, and abandons a candidate as soon as it determines that the candidate cannot possibly be completed to a valid solution. <br>
+              • Backtracking is an algorithmic-technique for solving problems recursively by trying to build a solution incrementally. <br>
+              </h5>
+        </div>
+        <div class="modal-footer">
+            <a href="https://www.geeksforgeeks.org/backtracking-algorithms/" target="_blank"> 
+                <button type="button" class="btn btn-success">
+                    GeeksForGeeks
+                </button>
+            </a> 
+
+            <a href="https://www.programiz.com/dsa/backtracking-algorithm" target="_blank"> 
+                <button type="button" class="btn btn-primary">
+                    Programiz
+                </button>
+            </a>
+        </div>
+      </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+  </div><!-- /.BackTrackingModal -->
+
+
+<!--GreedyModal-->
+<div bsModal #GreedyModal="bs-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dark modal-lg" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title w-100 text-center">Greedy</h4>
+          <button type="button" class="close" (click)="GreedyModal.hide()" aria-label="Close">
+            <span aria-hidden="true" style="color: white;">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+            <img src="/assets/img/dsa/greedy.png" alt="greedy" style="display: block; width: 100%;"><br>
+          <h5> •  A greedy algorithm is a simple, intuitive algorithm that is used in optimization problems.<br>
+              • The algorithm makes the optimal choice at each step as it attempts to find the overall optimal way to solve the entire problem. <br>
+              • Greedy is an algorithmic paradigm that builds up a solution piece by piece, always choosing the next piece that offers the most obvious and immediate benefit.<br>
+              • So the problems where choosing locally optimal also leads to global solution are best fit for Greedy.</h5>
+        </div>
+        <div class="modal-footer">
+            <a href="https://www.geeksforgeeks.org/greedy-algorithms/" target="_blank"> 
+                <button type="button" class="btn btn-success">
+                    GeeksForGeeks
+                </button>
+            </a> 
+
+            <a href="https://www.programiz.com/dsa/greedy-algorithm" target="_blank"> 
+                <button type="button" class="btn btn-primary">
+                    Programiz
+                </button>
+            </a>
+        </div>
+      </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+  </div><!-- /.GreedyModal -->
+
+
+<!--DPModal-->
+<div bsModal #DPModal="bs-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dark modal-lg" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title w-100 text-center">Dynamic Programming</h4>
+          <button type="button" class="close" (click)="DPModal.hide()" aria-label="Close">
+            <span aria-hidden="true" style="color: white;">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+            <img src="/assets/img/dsa/dp.png" alt="dp" style="display: block; width: 100%;"><br>
+          <h5> • Dynamic Programming (DP) is an algorithmic technique for solving an optimization problem by breaking it down into simpler subproblems. <br>
+              • It utilizes the fact that the optimal solution to the overall problem depends upon the optimal solution to its subproblems. <br>
+              • Dynamic programming is both a mathematical optimization method and a computer programming method. <br>
+              </h5>
+        </div>
+        <div class="modal-footer">
+            <a href="https://www.geeksforgeeks.org/dynamic-programming/" target="_blank"> 
+                <button type="button" class="btn btn-success">
+                    GeeksForGeeks
+                </button>
+            </a> 
+
+            <a href="https://www.programiz.com/dsa/dynamic-programming" target="_blank"> 
+                <button type="button" class="btn btn-primary">
+                    Programiz
+                </button>
+            </a>
+        </div>
+      </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+  </div><!-- /.DPModal -->
+
+
+<!--DCModal-->
+<div bsModal #DCModal="bs-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dark modal-lg" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title w-100 text-center">Divide & Conquer</h4>
+          <button type="button" class="close" (click)="DCModal.hide()" aria-label="Close">
+            <span aria-hidden="true" style="color: white;">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+            <img src="/assets/img/dsa/dc.png" alt="dc" style="display: block; width: 100%;"><br>
+          <h5> • In computer science, divide and conquer is an algorithm design paradigm. <br>
+              • A divide-and-conquer algorithm recursively breaks down a problem into two or more sub-problems of the same or related type, until these become simple enough to be solved directly.<br>
+              • Both merge sort and quicksort employ a common algorithmic paradigm based on recursion , which is divide and conquer.
+              </h5>
+        </div>
+        <div class="modal-footer">
+            <a href="https://www.geeksforgeeks.org/divide-and-conquer/" target="_blank"> 
+                <button type="button" class="btn btn-success">
+                    GeeksForGeeks
+                </button>
+            </a> 
+
+            <a href="https://www.programiz.com/dsa/divide-and-conquer" target="_blank"> 
+                <button type="button" class="btn btn-primary">
+                    Programiz
+                </button>
+            </a>
+        </div>
+      </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+  </div><!-- /.DCModal -->
+

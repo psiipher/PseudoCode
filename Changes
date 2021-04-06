@@ -1,0 +1,12 @@
+19-3-21
+    1. Create Learn module
+    2. Create DS and Algo comp.
+    3. _nav.ts
+    4. app-routing.ts
+    5. Create learn-routing.module.ts
+    6. learn.module.ts (Imports, CarouselModule)
+    7. ds.comp.html
+
+FOR REVIEW: (25/3/21)
+1. nav.ts
+2. dashboard (Directory)
