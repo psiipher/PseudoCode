@@ -1,0 +1,87 @@
+<div class="animated fadeIn container-fluid">
+  <p-card [style]="{'width': '25rem', 'margin-top':'50px', 'height': '23rem'}" header="Verify Certificate"
+    styleClass="p-card-shadow">
+    <br>
+    <!-- <img src="../../../../assets/img/back.jpg" class="card-img-top" alt="card" style="height: 15rem; margin-bottom: 20px;"> -->
+    <form [formGroup]="verify_cert" (ngSubmit)="onSubmit();">
+      <div class="form-group row">
+        <label class="col-md-3 col-form-label" for="platform"><strong>Platform</strong></label>
+        <div class="col-md-9">
+          <p-selectButton [options]="sites" formControlName="platform" optionLabel="name"
+          optionValue="code"></p-selectButton>
+        </div>
+      </div>
+      <br>
+      <!-- <div class="input-group mb-3">
+        <p-selectButton [options]="sites" formControlName="platform" optionLabel="name"
+          optionValue="code"></p-selectButton>
+      </div> -->
+      <div class="form-group row">
+        <label class="col-md-3 col-form-label" for="id"><strong>ID</strong></label>
+        <div class="col-md-9">
+          <span class="p-float-label">
+            <input id="float-input" type="text" pInputText autocomplete="on" formControlName="id" required>
+            <label for="float-input">Enter the certificate id</label>
+          </span>
+        </div>
+      </div>
+          <!-- <input type="text" class="form-control" placeholder="ID" autocomplete="on" formControlName="id" required>
+        </div> -->
+
+
+      <hr>
+
+      <div class="text-center" style="align-items: center;">
+        <button pButton pRipple type="submit" label="Verify" icon="pi pi-check"
+        class="p-button-raised p-button-sm p-button-success"></button>
+        <!-- <button type="submit" class="btn btn-success" style="width: 8rem;"></button> -->
+      </div>
+    </form>
+  </p-card>
+</div>
+
+
+<p-dialog header="Certificate Details" [(visible)]="sidebar" [position]="position" [modal]="true" [style]="{width: '50vw'}" [baseZIndex]="10000"
+    [draggable]="false" [resizable]="false">
+
+    <br>
+    <table class="table table-striped table-dark" style="color: white;" >
+      <tbody style="font-size: large;">
+        <tr>
+          <td><b>Platform</b></td>
+          <td>{{type}}</td>
+        </tr>
+        <tr>
+          <td><b>Course Name</b></td>
+          <td>{{courseName}}</td>
+        </tr>
+        <tr>
+          <td><b>Recipient Name</b></td>
+          <td>{{recipientName}}</td>
+        </tr>
+        <tr>
+          <td><b>Completion Date</b></td>
+          <td>{{completionDate}}</td>
+        </tr>
+        <tr *ngIf="type=='Udemy'">
+          <td><b>Course ID</b></td>
+          <td>{{courseId}}</td>
+        </tr>
+        <tr *ngIf="type=='Udemy'">
+          <td><b>Instructor Name</b></td>
+          <td>{{instructorName}}</td>
+        </tr>
+        <tr *ngIf="type=='Udemy'">
+          <td><b>Course URL</b></td>
+          <td><p-button label="Link" styleClass="p-button-link p-button-sm" icon="pi pi-external-link" 
+            target="_blank" (click)="open_url()"></p-button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+        <ng-template pTemplate="footer">
+            <p-button icon="pi pi-check" (click)="sidebar=false" label="Done" styleClass="p-button-text"></p-button>
+        </ng-template>
+</p-dialog>
+
+

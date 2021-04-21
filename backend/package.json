@@ -11,6 +11,7 @@
   "dependencies": {
     "bcryptjs": "^2.4.3",
     "body-parser": "^1.19.0",
+    "cf-api-wrapper": "^1.0.2",
     "config": "^3.3.1",
     "cors": "^2.8.5",
     "ejs": "^2.7.1",
@@ -24,7 +25,8 @@
     "mysql": "^2.18.1",
     "nodemon": "^2.0.4",
     "req-flash": "0.0.3",
-    "request": "^2.88.2"
+    "request": "^2.88.2",
+    "verify-certification": "^1.0.0"
   },
   "description": ""
 }

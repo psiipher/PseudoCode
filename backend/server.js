@@ -77,7 +77,9 @@ app.use(bodyParser.json());
 
 // routes for the app
 
-// app.use('/api',require('./routes/auth'));
+app.use('/api',require('./routes/auth'));
+app.use('/api/verify-cert',require('./routes/verify-cert'));
+app.use('/api/code',require('./routes/code'));
 // app.use('/api/dashboard',require('./routes/dashboard'));
 // app.use('/api/dashboard/batch',require('./routes/batch_master'));
 // app.use('/api/dashboard/locker_batch',require('./routes/locker_master'));

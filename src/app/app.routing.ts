@@ -12,7 +12,7 @@ import { RegisterComponent } from './views/register/register.component';
 export const routes: Routes = [
   {
     path: '',
-    redirectTo: 'dashboard',
+    redirectTo: 'login',
     pathMatch: 'full',
   },
   {
@@ -55,8 +55,16 @@ export const routes: Routes = [
         loadChildren: () => import('./views/base/base.module').then(m => m.BaseModule)
       },
       {
+        path: 'code',
+        loadChildren: () => import('./views/code/code.module').then(m => m.CodeModule)
+      },
+      {
         path: 'learn',
         loadChildren: () => import('./views/learn/learn.module').then(m => m.LearnModule)
+      },
+      {
+        path: 'mooc',
+        loadChildren: () => import('./views/mooc/mooc.module').then(m => m.MoocModule)
       },
       {
         path: 'buttons',

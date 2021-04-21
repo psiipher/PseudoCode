@@ -9,6 +9,8 @@ import { PerfectScrollbarConfigInterface } from 'ngx-perfect-scrollbar';
 
 import { IconModule, IconSetModule, IconSetService } from '@coreui/icons-angular';
 
+import { FormsModule, ReactiveFormsModule } from '@angular/forms'; 
+
 const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
   suppressScrollX: true
 };
@@ -22,6 +24,8 @@ import { P404Component } from './views/error/404.component';
 import { P500Component } from './views/error/500.component';
 import { LoginComponent } from './views/login/login.component';
 import { RegisterComponent } from './views/register/register.component';
+
+import { SigninService } from './views/signin.service';
 
 const APP_CONTAINERS = [
   DefaultLayoutComponent
@@ -38,10 +42,18 @@ import {
 // Import routing module
 import { AppRoutingModule } from './app.routing';
 
+
 // Import 3rd party components
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 import { TabsModule } from 'ngx-bootstrap/tabs';
 import { ChartsModule } from 'ng2-charts';
+
+import { ToastrModule } from 'ngx-toastr';
+import {CardModule} from 'primeng/card';
+import {InputTextModule} from 'primeng/inputtext';
+import {ButtonModule} from 'primeng/button';
 
 @NgModule({
   imports: [
@@ -59,6 +71,13 @@ import { ChartsModule } from 'ng2-charts';
     ChartsModule,
     IconModule,
     IconSetModule.forRoot(),
+    FormsModule,
+    ReactiveFormsModule,
+    HttpClientModule,
+    ToastrModule.forRoot(),
+    CardModule,
+    InputTextModule,
+    ButtonModule
   ],
   declarations: [
     AppComponent,
@@ -74,6 +93,7 @@ import { ChartsModule } from 'ng2-charts';
       useClass: HashLocationStrategy
     },
     IconSetService,
+    SigninService
   ],
   bootstrap: [ AppComponent ]
 })

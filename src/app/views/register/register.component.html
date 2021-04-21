@@ -1,53 +1,86 @@
-<div class="app-body">
+<div class="app-body" style="background-image: url(../../../assets/img/back1.jpg);background-size: cover;">
   <main class="main d-flex align-items-center">
     <div class="container">
       <div class="row">
-        <div class="col-md-6 mx-auto">
-          <div class="card mx-4">
-            <div class="card-body p-4">
-              <form>
-                <h1>Register</h1>
-                <p class="text-muted">Create your account</p>
-                <div class="input-group mb-3">
-                  <div class="input-group-prepend">
-                    <span class="input-group-text"><i class="icon-user"></i></span>
-                  </div>
-                  <input type="text" class="form-control" placeholder="Username" autocomplete="username" required>
-                </div>
-                <div class="input-group mb-3">
-                  <div class="input-group-prepend">
-                    <span class="input-group-text">@</span>
-                  </div>
-                  <input type="text" class="form-control" placeholder="Email" autocomplete="email" required>
-                </div>
-                <div class="input-group mb-3">
-                  <div class="input-group-prepend">
-                    <span class="input-group-text"><i class="icon-lock"></i></span>
-                  </div>
-                  <input type="password" class="form-control" placeholder="Password" autocomplete="new-password" required>
-                </div>
-                <div class="input-group mb-4">
-                  <div class="input-group-prepend">
-                    <span class="input-group-text"><i class="icon-lock"></i></span>
-                  </div>
-                  <input type="password" class="form-control" placeholder="Repeat password" autocomplete="new-password" required>
-                </div>
-                <button type="button" class="btn btn-block btn-success">Create Account</button>
-              </form>
-            </div>
-            <!-- <div class="card-footer p-4">
-              <div class="row">
-                <div class="col-6">
-                  <button class="btn btn-block btn-facebook" type="button"><span>facebook</span></button>
-                </div>
-                <div class="col-6">
-                  <button class="btn btn-block btn-twitter" type="button"><span>twitter</span></button>
-                </div>
-              </div>
-            </div> -->
+        <div class="mx-auto">
+            <!-- <div class="card-body p-4"> -->
+          <p-card header="Register" subheader="Create your account" styleClass="mx-4 p-card-shadow"
+              [style]="{'width': '28rem'}">
+          
+          <form [formGroup]="registration" (ngSubmit)="onSubmit();">
+        <div class="form-group row">
+          <div class="p-inputgroup col-6">
+            <span class="p-inputgroup-addon"><i class="pi pi-user"></i></span>
+            <input placeholder="First Name" type="text" class="form-control" formControlName="first_name" required pInputText>  
+          </div>
+
+          <div class="p-inputgroup col-6">
+            <span class="p-inputgroup-addon"><i class="pi pi-user"></i></span>
+            <input placeholder="Last Name" type="text" class="form-control" formControlName="last_name" required pInputText>  
           </div>
         </div>
+       
+          <div class="input-group mb-3">
+            <div class="p-inputgroup">
+              <span class="p-inputgroup-addon"><i class="pi pi-mobile"></i></span>
+              <input placeholder="Mobile Number" type="text" class="form-control" formControlName="phone" required pInputText>
+            </div>
+            <!-- phone Validation Render -->
+            <div *ngIf="phone.invalid && phone.touched">
+              <div *ngIf="phone.errors?.invalidMobileNumber" class="ng-invalid ng-dirty">
+                <small style="margin-top: 0px;" id="phone" class="p-error">Enter valid Mobile Number</small>
+              </div>
+            </div>
+          </div>
+
+          <div class="input-group mb-3">
+            <div class="p-inputgroup">
+              <span class="p-inputgroup-addon"><i class="pi pi-send"></i></span>
+              <input placeholder="Email" type="email" class="form-control" formControlName="mail_id" required pInputText>
+            </div>
+            <!-- Mail Validation Render -->
+            <div *ngIf="mail_id.invalid && mail_id.touched">
+              <div *ngIf="mail_id.errors?.invalidEmailAddress" class="ng-invalid ng-dirty">
+                <small style="margin-top: 0px;" id="mail_id" class="p-error">Enter valid email id</small>
+              </div>
+            </div>
+          </div>
+
+          <div class="input-group mb-3">
+            <div class="p-inputgroup">
+              <span class="p-inputgroup-addon"><i class="pi pi-unlock"></i></span>
+              <input placeholder="Passsword" type="password" 
+                class="form-control" formControlName="password"
+                required pInputText>
+            </div>
+
+            <!-- Password Validation Render -->
+            <div *ngIf="password.invalid && password.touched">
+              <div *ngIf="password.errors?.minlength" class="ng-invalid ng-dirty">
+                <small style="margin-top: 0px;" id="password" class="p-error">Password length should be atleast 5.</small>
+              </div>
+            </div>
+          </div>
+
+        <div class="form-group text-center pull-right" style="align-items: right;">
+          <button pButton pRipple type="submit" label="Register" 
+          [disabled]="!registration.valid"
+          icon="pi pi-check" class="p-button-raised p-button-sm p-button-success"></button>
+        </div>
+      </form>
+
+    <br><br><br>
+    <h4 style="text-align:center;">Already have an account? </h4>
+      <div class="text-center" style="align-items: center;">
+        <button pButton pRipple type="button" label="Log In" 
+          class="p-button-raised p-button-sm p-button-info p-button-text" 
+          onclick="window.location.href='/#/login'"></button>
       </div>
-    </div>
-  </main>
+
+</p-card>
+</div>
+
+</div>
+</div>
+</main>
 </div>

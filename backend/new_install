@@ -1,0 +1,9 @@
+npm install ngx-toastr --save
+npm install @angular/animations --save
+
+npm install verify-certification
+
+npm i cf-api-wrapper
+
+npm install primeng --save
+npm install primeicons --save

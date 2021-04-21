@@ -46,6 +46,35 @@ export const navItems: INavData[] = [
      
     ]
   },
+  {
+    name: 'MOOC',
+    url: '/mooc',
+    icon: 'icon-puzzle',
+    children: [
+      {
+        name: 'edx',
+        url: '/mooc/edx',
+        icon: 'icon-puzzle'
+      },
+      {
+        name: 'Verify Certificate',
+        url: '/mooc/verify-cert',
+        icon: 'icon-puzzle'
+      },    
+    ]
+  },
+  {
+    name: 'Code',
+    url: '/code',
+    icon: 'icon-puzzle',
+    children: [
+      {
+        name: 'Codeforces',
+        url: '/code/codeforces',
+        icon: 'icon-puzzle'
+      }, 
+    ]
+  },
   // {
   //   name: 'Base',
   //   url: '/base',

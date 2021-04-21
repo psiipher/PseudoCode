@@ -1,4 +1,9 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
+import {FormBuilder, Validators } from '@angular/forms';
+import {ValidationService} from './validation.service';
+import { SigninService } from '../signin.service';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-dashboard',
@@ -6,6 +11,87 @@ import { Component } from '@angular/core';
 })
 export class RegisterComponent {
 
-  constructor() { }
+  constructor(private fb:FormBuilder, 
+              private SigninService:SigninService, 
+              private router: Router,
+              private toastr: ToastrService) { }
+
+  get first_name()
+  {
+    return this.registration.get('first_name');
+  }
+
+  get mail_id()
+  {
+    return this.registration.get('mail_id');
+  }
+
+  get last_name()
+  {
+    return this.registration.get('last_name');
+  }
+
+  get phone()
+  {
+    return this.registration.get('phone');
+  }
+
+  get password()
+  {
+    return this.registration.get('password');
+  }
+
+  registration = this.fb.group({
+
+    first_name:['', [Validators.required]],
+    last_name:['', [Validators.required]],
+    mail_id:['', [ValidationService.emailValidator,Validators.required]],
+    password:['', [Validators.minLength(5)]],
+    phone:['', [ValidationService.mobileValidator,Validators.required]]
+    
+  });
+
+  onSubmit(){
+    console.log((this.registration.value));
+    this.SigninService.RegisterUser(this.registration.value).subscribe(res => {
+      this.router.navigate(['/dashboard']),
+      this.toastr.success('Welcome to PseudoCode');
+    },
+    err => {
+      console.log(err),
+      this.toastr.error('Please retry!');
+    })
+  }
+
+
+
+  //   this.show_card = true;
+  //   window.scrollTo(0,0);
+
+  //   this.startTimer();
+
+  //   setTimeout(() => {
+  //     this.router.navigate(['/login']);
+  // }, 5000);  //3.5s
+
+  
+   
+
+//   }
+//   timeLeft: number = 4;
+//   interval;
+
+
+//   startTimer() {
+//     this.interval = setInterval(() => {
+//       if(this.timeLeft > 0) {
+//         this.timeLeft--;
+//       } else {
+//         this.timeLeft = 4;
+//       }
+//     },1000)
+//   }
+
+
 
 }

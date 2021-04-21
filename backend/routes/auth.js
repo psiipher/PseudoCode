@@ -13,11 +13,11 @@ const config = require('config');
 
 router.post('/register',async (req,res)=>{
 
-    let {email,password,firstname,lastname,personalmobile,studyroomname,otp} = req.body;
-   // console.log(req.body);
+    let {first_name, last_name, mail_id,password,phone} = req.body;
+    console.log(req.body);
     try
     {
-        let query =  "INSERT INTO `vendor_master` (`vendor_id`, `first_name`, `last_name`, `mobile_vendor`, `studyroom_name`, `email`, `password`, `otp`) VALUES (NULL,'"+ firstname + "','"+ lastname + "', '"+ personalmobile + "', '"+ studyroomname + "', '"+ email + "','"+ password + "','"+ otp + "')";
+        let query =  "INSERT INTO `user_master` (`user_id`, `first_name`, `last_name`, `phone`, `mail_id`, `password`) VALUES (NULL,'"+ first_name + "','"+ last_name + "', '"+ phone + "', '"+ mail_id + "','"+ password + "')";
         
         db.query(query, (err, result) => {
 
@@ -57,10 +57,10 @@ router.post('/register',async (req,res)=>{
 
 router.post('/login',async (req,res)=>{
 
-    let {email,password} = req.body;
+    let {mail_id,password} = req.body;
     try
     {
-        let query =  "SELECT * from vendor_master where email='"+email+"'";
+        let query =  "SELECT * from user_master where mail_id='"+mail_id+"'";
         
         db.query(query, (err, result) => {
 
@@ -76,16 +76,12 @@ router.post('/login',async (req,res)=>{
                  }
 
                  const payload = {
-                     vendor_profile:{
-                         id:result[0].vendor_id,
+                     user_profile:{
+                         user_id:result[0].user_id,
                          first_name:result[0].first_name,
                          last_name:result[0].last_name,
-                         mobile_vendor:result[0].mobile_vendor,
-                         studyroom_name:result[0].studyroom_name,
-                         email:result[0].email,
-                         registration_date:result[0].registration_date,
-                         gst_number:result[0].gst_number,
-
+                         phone:result[0].mobile_vendor,
+                         mail_id:result[0].mail_id
                      }
                  }
 
@@ -95,15 +91,16 @@ router.post('/login',async (req,res)=>{
                  if(password === result[0].password)//Password Match
                  {
                     //res.json({"profile":result[0]});
-                    jwt.sign(payload,config.get('jwtSecret'),{expiresIn:360000 },(err,token)=>{
-                        if(err)
-                        {
-                            throw err;
-                        }
+                    // jwt.sign(payload,config.get('jwtSecret'),{expiresIn:360000 },(err,token)=>{
+                    //     if(err)
+                    //     {
+                    //         throw err;
+                    //     }
             
-                        res.json({token});
-                        sendtoken(token,result[0].vendor_id);
-                    })
+                    //     res.json({token});
+                    //     sendtoken(token,result[0].vendor_id);
+                    // })
+                    res.json({msg:`Welcome user`});
                     
                  }
                  else
