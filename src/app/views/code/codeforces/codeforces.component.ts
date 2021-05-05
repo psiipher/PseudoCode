@@ -9,8 +9,18 @@ import { CodeService } from '../code.service';
 export class CodeforcesComponent implements OnInit {
 
   constructor(private _service: CodeService) { }
+  items: any;
+  activeItem: any;
+  menu: any;
 
   ngOnInit(): void {
+
+    this.items = [
+      {label: 'Profile', icon: 'pi pi-fw pi-home'},
+      {label: 'Contest Dates', icon: 'pi pi-fw pi-calendar'},
+      {label: 'Editor', icon: 'pi pi-fw pi-pencil'}
+  ];
+  this.activeItem = this.items[0];
   }
 
   cf_get() {
@@ -22,5 +32,7 @@ export class CodeforcesComponent implements OnInit {
       console.log(err);
     });
   }
+
+
 
 }
