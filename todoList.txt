@@ -1,8 +1,4 @@
-1. what to do Eid already registered
-
-4. If- Udemy then add intructor name, courseId, courseURL, completionDate(Time)
-
-5. For Running code , use Editor from PRIMENG and API of CodeForces (https://www.npmjs.com/package/hackerearth-v4-node)
+5. For Running code , use Editor from PRIMENG and API of hackerearth (https://www.npmjs.com/package/hackerearth-v4-node)
 
 6. use Toast of PRIMENG (if have enough time to do so)
 
@@ -12,4 +8,7 @@
                     2). Store handle name in Database
                     3). Show someone else's profile.
 
+9. Take photo from user when he registers
+
+10. CodeForces Modal remove
 

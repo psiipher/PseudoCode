@@ -1,0 +1,8 @@
+:host ::ng-deep .p-card {
+    &.card1 {
+        background-color:  	#2f353a;
+        .p-card-footer {
+            text-align: right;
+        }
+    }
+}

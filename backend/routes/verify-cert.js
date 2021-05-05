@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
-var cert= require('verify-certification');
 
+var cert= require('verify-certification');
 var platform;
 var id;
 
