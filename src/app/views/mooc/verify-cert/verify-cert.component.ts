@@ -67,18 +67,25 @@ export class VerifyCertComponent implements OnInit {
 
   define_value(res) {
       if (res.isVerified === undefined || res.isVerified === true) {
-        this.type = res.type;
-        this.completionDate = res.completionDate.slice(0,10);
-        this.courseName = res.courseName;
-        this.recipientName = res.recipientName;
-        this.sidebar = true;
-        this.position = 'right';
 
         if (res.type === "Udemy") {
           this.courseId = res.courseId;
           this.courseUrl = res.courseUrl;
           this.instructorName = res.instructorName;
+          this.completionDate = res.completionDate.slice(0,10);
         }
+
+        else {
+          this.completionDate = res.completionDate;
+        }
+        
+        this.type = res.type;
+        this.courseName = res.courseName;
+        this.recipientName = res.recipientName;
+        this.sidebar = true;
+        this.position = 'right';
+
+
         console.log(this.courseUrl);
       }
       

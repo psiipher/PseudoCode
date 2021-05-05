@@ -59,7 +59,7 @@ export class RegisterComponent {
     },
     err => {
       console.log(err),
-      this.toastr.error('Please retry!');
+      this.toastr.error('Account with same credentials already exists!');
     })
   }
 
