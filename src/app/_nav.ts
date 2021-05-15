@@ -73,6 +73,11 @@ export const navItems: INavData[] = [
         url: '/code/codeforces',
         icon: 'icon-puzzle'
       }, 
+      {
+        name: 'JS-Editor',
+        url: '/code/js-editor',
+        icon: 'icon-puzzle'
+      }, 
     ]
   },
   // {

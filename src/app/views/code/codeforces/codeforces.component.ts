@@ -60,7 +60,7 @@ export class CodeforcesComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.displayBasic = false;
+    this.displayBasic = true;
 
     this.cols = [
       { field: 'name', header: 'Name' },

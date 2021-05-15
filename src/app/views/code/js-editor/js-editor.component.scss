@@ -1,0 +1,8 @@
+:host ::ng-deep .p-card {
+    &.card1 {
+        
+        .p-card-footer {
+            text-align: right;
+        }
+    }
+}

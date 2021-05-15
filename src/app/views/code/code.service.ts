@@ -10,6 +10,7 @@ export class CodeService {
 
   private _cfUrl = "http://localhost:5000/api/codeforces/user_profile";
   private _problemUrl = "http://localhost:5000/api/codeforces/problems";
+  private _editorUrl = "http://localhost:5000/api/js-editor";
 
   cf_get()
   {
@@ -26,5 +27,13 @@ export class CodeService {
 
   problems_post(tag) {
     return this.http.post<any>(this._problemUrl, tag);
+  }
+
+  editor_get() {
+    return this.http.get<any>(this._editorUrl);
+  }
+
+  editor_post(tag) {
+    return this.http.post<any>(this._editorUrl, tag);
   }
 }

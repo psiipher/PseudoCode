@@ -81,6 +81,7 @@ app.use('/api',require('./routes/auth'));
 app.use('/api/verify-cert',require('./routes/verify-cert'));
 app.use('/api/codeforces',require('./routes/codeforces'));
 app.use('/api/news',require('./routes/news'));
+app.use('/api/js-editor',require('./routes/js-editor'));
 // app.use('/api/dashboard',require('./routes/dashboard'));
 // app.use('/api/dashboard/batch',require('./routes/batch_master'));
 // app.use('/api/dashboard/locker_batch',require('./routes/locker_master'));
