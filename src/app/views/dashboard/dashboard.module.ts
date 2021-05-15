@@ -1,11 +1,26 @@
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { CommonModule } from "@angular/common";
 import { ChartsModule } from 'ng2-charts';
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 import { ButtonsModule } from 'ngx-bootstrap/buttons';
 
 import { DashboardComponent } from './dashboard.component';
 import { DashboardRoutingModule } from './dashboard-routing.module';
+
+import { StickyNotesModule } from 'pm-sticky-notes';
+
+import {InputTextareaModule} from 'primeng/inputtextarea';
+import {CardModule} from 'primeng/card';
+import {DividerModule} from 'primeng/divider';
+import {ButtonModule} from 'primeng/button';
+import {TooltipModule} from 'primeng/tooltip';
+import {ListboxModule} from 'primeng/listbox';
+import {DialogModule} from 'primeng/dialog';
+import {InputTextModule} from 'primeng/inputtext';
+import {ConfirmPopupModule} from 'primeng/confirmpopup';
+
+import {ConfirmationService} from 'primeng/api';
 
 
 @NgModule({
@@ -14,8 +29,20 @@ import { DashboardRoutingModule } from './dashboard-routing.module';
     DashboardRoutingModule,
     ChartsModule,
     BsDropdownModule,
-    ButtonsModule.forRoot()
+    ButtonsModule.forRoot(),
+    StickyNotesModule,
+    CardModule,
+    InputTextareaModule,
+    DividerModule,
+    ButtonModule,
+    TooltipModule,
+    ListboxModule,
+    DialogModule,
+    InputTextModule,
+    ConfirmPopupModule,
+    CommonModule
   ],
-  declarations: [ DashboardComponent ]
+  declarations: [ DashboardComponent ],
+  providers: [ConfirmationService]
 })
 export class DashboardModule { }

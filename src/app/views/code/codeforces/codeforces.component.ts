@@ -11,8 +11,7 @@ export class CodeforcesComponent implements OnInit {
   displayBasic: boolean;
   handle_name: string;
   handle_name_obj: object;
-  tag: string;
-  tag_obj: object;
+  tag: any;
   profile_hide: boolean = false;
 
   tag_list: any;
@@ -89,6 +88,21 @@ export class CodeforcesComponent implements OnInit {
     maxRank : ''
   }
 
+  styleObject(field): Object {
+    if (field === "link" ){
+        return {width: '80px'}
+    }
+
+    else if (field === 'rating') {
+      return {width: '140px'}
+    }
+
+    else if (field === 'name') {
+      return {width: '180px'}
+    }
+    return {}
+}
+
   //USER PROFILE
 
   handleName_post() {
@@ -140,8 +154,7 @@ export class CodeforcesComponent implements OnInit {
   }
 
   problems_post() {
-    this.tag_obj = {tag : this.tag};
-    this._service.problems_post(this.tag_obj).subscribe(
+    this._service.problems_post(this.tag).subscribe(
       res => {
         this.problems_get();
       },

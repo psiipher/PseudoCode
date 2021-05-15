@@ -30,8 +30,8 @@ export class LoginComponent {
   });
 
   onSubmit(){
-    console.log((this.login.value));
     this.SigninService.loginUser(this.login.value).subscribe(res => { 
+      localStorage.setItem('username', this.login.value.mail_id), 
       this.router.navigate(['/dashboard']),
       this.toastr.success('Welcome to PseudoCode');
     },

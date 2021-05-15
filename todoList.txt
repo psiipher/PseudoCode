@@ -10,5 +10,17 @@
 
 9. Take photo from user when he registers
 
-10. CodeForces Modal remove
+11. Forgot Password ( ask 3 questions)
+
+12. Blog
+
+Extra:
+    Listbox width
+    CodeForces Modal remove
+
+
+
+
+
+News API key: c320b4be0c3b4d029f305f96e7d6b1a3
 

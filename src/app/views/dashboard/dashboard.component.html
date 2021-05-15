@@ -1,0 +1,75 @@
+<div class="animated fadeIn">
+<!-- <div class="card">
+    <sticky-notes (onblur)="getnote($event)" [data]="data"></sticky-notes >
+</div> -->
+    <div class="row">
+        <p-card styleClass="left-card">
+            <div style="text-align: center;">
+                <img src="assets/img/avatars/t.jpg" alt="Avatar" 
+                    style="border-radius: 50%; width: 170px; height: 160px;">
+                <br><br>
+                <h3 class="text-black d-block"><b>Tushar Baid</b></h3>
+                <span class="d-block">India</span>
+                <div class="icons">
+                    <button pButton pRipple type="button" icon="icon-social-github" 
+                        class="p-button-rounded p-button-text font-xl p-button-plain"></button>
+                    <button pButton pRipple type="button" icon="icon-social-linkedin" 
+                        class="p-button-rounded p-button-text font-xl p-button-primary"></button>
+                    <button pButton pRipple type="button" icon="icon-globe" 
+                        class="p-button-rounded p-button-text font-xl p-button-success"></button>
+                </div>                
+            </div>
+            <p-divider></p-divider>
+            <br>
+            <!-- <textarea class="notes" rows="10" pTooltip="Todo List" cols="25" 
+                tooltipPosition="right" pInputTextarea autoResize="true"></textarea> -->
+                <p-card styleClass="notes">
+                    <ng-template pTemplate="header">
+                        <div class="notes-icons">
+                            <button pButton pRipple type="button" icon="pi pi-plus"
+                                class="p-button-rounded p-button-text p-button-lg"
+                                (click)="showModalDialog('left')">
+                            </button>
+
+                            <p-confirmPopup></p-confirmPopup>
+                            <button pButton pRipple type="button" icon="pi pi-trash"
+                                class="p-button-rounded p-button-text p-button-danger p-button-lg"
+                                (click)="confirm($event)"><!--todo_delete();-->
+                            </button>
+                            <p-dialog header=" " [(visible)]="displayModal" [modal]="true" 
+                                [position]="position" [style]="{width: 'max-content'}" [baseZIndex]="10000"
+                                [draggable]="false" [resizable]="false">
+
+                                <input type="text" pInputText placeholder="Add new activity" [(ngModel)]="todo" />
+                                    <ng-template pTemplate="footer">
+                                        <p-button label="Submit" icon="pi pi-check" styleClass="p-button-sm"
+                                        (click)="displayModal=false; todo_push();toast()"></p-button>
+                                    </ng-template>
+                            </p-dialog>
+                        </div>
+                    </ng-template>
+                                
+                    <p-listbox #todo_box styleClass="listbox" [options]="todo_list" [(ngModel)]="selectedTodo"
+                        [listStyle]="{'max-height':'200px'}" >
+                        <ng-template let-todo pTemplate="item">
+                            <div>{{todo}}</div>
+                        </ng-template>
+                    </p-listbox>
+                </p-card>
+
+        </p-card>
+        <p-card styleClass="right-card">
+            <p-card styleClass="newsCard">
+                <ul style="list-style-type:none;">
+                    <li *ngFor="let col of cols" style="color: black; height: 140px;">
+                        {{col.header}}
+                        <hr>
+                    </li>
+                </ul>
+            
+            </p-card>
+            <button (click)="news_get()">NEWS WAALE</button>
+        </p-card>
+    </div>
+</div>
+

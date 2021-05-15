@@ -10,6 +10,8 @@ export class SigninService {
 
   private _loginUrl = "http://localhost:5000/api/login";
   private _registerUrl = "http://localhost:5000/api/register";
+  private _todoUrl = "http://localhost:5000/api/todo";
+  private _newsUrl = "http://localhost:5000/api/news"
 
   RegisterUser(user)
   {
@@ -18,5 +20,18 @@ export class SigninService {
 
   loginUser(user) {
     return this.http.post<any>(this._loginUrl, user);
+  }
+
+  todo_get(username) {
+    let _get_todoUrl = this._todoUrl + '/' + username;
+    return this.http.get<any>(_get_todoUrl);
+  }
+
+  todo_post(todo_obj) {
+    return this.http.post<any>(this._todoUrl, todo_obj);
+  }
+
+  news_get() {
+    return this.http.get<any>(this._newsUrl);
   }
 }

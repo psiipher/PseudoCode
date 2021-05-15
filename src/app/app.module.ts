@@ -54,6 +54,7 @@ import { ToastrModule } from 'ngx-toastr';
 import {CardModule} from 'primeng/card';
 import {InputTextModule} from 'primeng/inputtext';
 import {ButtonModule} from 'primeng/button';
+import {MenubarModule} from 'primeng/menubar';
 
 @NgModule({
   imports: [
@@ -77,7 +78,8 @@ import {ButtonModule} from 'primeng/button';
     ToastrModule.forRoot(),
     CardModule,
     InputTextModule,
-    ButtonModule
+    ButtonModule,
+    MenubarModule
   ],
   declarations: [
     AppComponent,

@@ -121,13 +121,12 @@
 
               <!--TABLE-->
               <p-table [columns]="cols" [value]="problem_obj.problems"
-                styleClass="p-datatable-gridlines p-datatable-striped"
-                [scrollable]="true" scrollHeight="1000px" 
-                [resizableColumns]="true">
+                styleClass="p-datatable-gridlines p-datatable"
+                [scrollable]="true" scrollHeight="1000px">
                 <ng-template pTemplate="header" let-columns>
-                    <tr>
-                        <th *ngFor="let col of columns" [pSortableColumn]="col.field"
-                          pResizableColumn>
+                    <tr style="width: fit-content;">
+                        <th *ngFor="let col of columns" [pSortableColumn]="col.field" 
+                          [ngStyle]="styleObject(col.field)">
                             {{col.header}}
                             <p-sortIcon field="col.field"></p-sortIcon>
                         </th> 
@@ -135,7 +134,7 @@
                 </ng-template>
                 <ng-template pTemplate="body" let-rowData>
                     <tr>
-                      <td *ngFor="let col of cols">
+                      <td *ngFor="let col of cols" [ngStyle]="styleObject(col.field)">
 
                         <div *ngIf="col.field=='tags'">
                           <p-tag *ngFor="let tag of rowData[col.field]" severity="success" [rounded]="true">

@@ -54,6 +54,7 @@ export class RegisterComponent {
   onSubmit(){
     console.log((this.registration.value));
     this.SigninService.RegisterUser(this.registration.value).subscribe(res => {
+      localStorage.setItem('username', this.registration.value.mail_id),
       this.router.navigate(['/dashboard']),
       this.toastr.success('Welcome to PseudoCode');
     },

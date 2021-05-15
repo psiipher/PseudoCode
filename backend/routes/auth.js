@@ -129,6 +129,43 @@ router.post('/login',async (req,res)=>{
 
 });
 
+//TODO
+
+router.get('/todo/:username',async (req,res)=>{
+
+    let username = req.params.username;
+
+    let get_query = "SELECT todo_list FROM user_master WHERE mail_id ='" + username +  "'";
+
+    db.query(get_query, (err, result) => {
+            
+        if (err) {
+            return res.status(500).json({errors:[{msg:'Query Error'}]})
+        }
+        else{           
+            res.json(result);            
+        }
+    });
+});
+
+
+router.post('/todo',async (req,res)=>{
+
+    username = req.body.username;
+    todo_list = req.body.todo_list;
+
+    let post_query = "UPDATE  `user_master` SET todo_list='" + todo_list + "' WHERE mail_id= '" + username +  "' ";
+
+    db.query(post_query, (err, result) => {
+            
+        if (err) {
+            return res.status(500).json({errors:[{msg:'Query Error'}]})
+        }
+        else{           
+            res.json(result);            
+        }
+    });
+});
 
 function sendtoken(token,id)
 {

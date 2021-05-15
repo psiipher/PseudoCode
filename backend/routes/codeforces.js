@@ -40,7 +40,7 @@ router.get('/problems',async(req,res) => {
 });
 
 router.post('/problems',async(req,res) => {
-    tag = req.body.tag;
+    tag = req.body.name;
     res.json({msg:`Done!`});    
 });
 

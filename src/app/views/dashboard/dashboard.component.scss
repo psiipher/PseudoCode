@@ -1,0 +1,67 @@
+:host ::ng-deep .p-card {
+    &.left-card {
+        // background-color:  	white;
+        // color: rgb(63, 57, 57);
+        width: 20rem;
+        margin-left: 20px;
+        margin-top:30px;
+        height:50rem;
+        margin-bottom:30px;
+        font-family:Arial, Helvetica, sans-serif
+
+    }
+
+    &.right-card {
+        width: 47rem;
+        margin-left: 30px;
+        margin-top:30px;
+        height:50rem;
+        margin-bottom:30px;
+    }
+
+    &.newsCard {
+        background: #e4e7ea;
+        margin: 10px 15px 15px 15px;
+        height: 450px;
+    }
+    
+    &.notes {
+        background:rgb(251, 251, 188);
+        color: rgb(63, 57, 57);
+        height: 20rem;
+    }
+}
+
+.icons {
+    margin-right: 15px;
+    margin-top: 10px;
+    margin-left: 10px;
+}
+
+.notes-icons {
+    margin-top: 10px;
+    float: right;
+    margin-right: 10px;
+}
+
+
+:host ::ng-deep .p-listbox {
+    margin-top: 40px;
+    &.listbox {
+        background:rgb(251, 251, 188);
+        color: rgb(63, 57, 57);
+        
+    }
+    .p-listbox-item {
+        color: rgb(63, 57, 57);
+        
+    }
+    .p-listbox-list {
+        color: rgb(63, 57, 57);
+    }
+    .p-listbox-header {
+        background:rgb(251, 251, 188);
+    }
+}
+
+
