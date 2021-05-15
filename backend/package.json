@@ -20,6 +20,7 @@
     "express-session": "^1.16.2",
     "express-validator": "^6.5.0",
     "install": "^0.13.0",
+    "javascript-code-runner": "^1.0.5",
     "jsonwebtoken": "^8.5.1",
     "multer": "^1.4.2",
     "mysql": "^2.18.1",

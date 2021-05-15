@@ -1,0 +1,33 @@
+<p-messages [(value)]="msg" [enableService]="false"></p-messages>
+<br>
+<p-messages [(value)]="msgs1" [enableService]="false"></p-messages>
+<p-editor [(ngModel)]="text" [style]="{'height':'320px'}">
+    <ng-template pTemplate="header">
+        <span class="ql-formats">
+            <button pButton type="button" class="ql-code-block" aria-label="Code" pTooltip="Please click to enable Code-block"></button>
+        </span>
+    </ng-template>
+</p-editor>
+<br>
+<button pButton type="button" label="Compile & Run" style="float: right;"
+          class="p-button-sm" (click)="post_code();"></button>
+
+
+
+
+    <p-dialog header="Output" [(visible)]="displayModal" [modal]="true" [style]="{width: '50vw'}" [baseZIndex]="10000"
+          [draggable]="true" [resizable]="false">
+            <div *ngIf="!Er">
+                <p class="p-m-0" style="color:rgb(23, 228, 23)">Compiled Successfully</p>
+                <p class="p-m-0">{{output}}</p>
+            </div>
+            <div *ngIf="Er">
+                <p class="p-m-0" style="color:red">Compilation Error</p>
+                <p class="p-m-0">{{output}}</p>
+            </div>
+          
+            <ng-template pTemplate="footer">
+            <p-button icon="pi pi-check" (click)="displayModal=false" label="Ok" styleClass="p-button-text"></p-button>
+            </ng-template>
+    </p-dialog>
+{{text}}

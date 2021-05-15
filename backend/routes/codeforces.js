@@ -30,7 +30,7 @@ router.post('/user_profile',async(req,res) => {
 router.get('/problems',async(req,res) => {
     cf.problemset.problems({tags: tag}).then(
         result => {
-            console.log(JSON.stringify(result));
+            //console.log(JSON.stringify(result));
             res.send(JSON.stringify(result));
         },
         err => {
@@ -40,7 +40,8 @@ router.get('/problems',async(req,res) => {
 });
 
 router.post('/problems',async(req,res) => {
-    tag = req.body.tag;
+    tag = req.body.name;
+    console.log(req.body);
     res.json({msg:`Done!`});    
 });
 

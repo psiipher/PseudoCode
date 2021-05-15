@@ -11,9 +11,8 @@ export class CodeforcesComponent implements OnInit {
   displayBasic: boolean;
   handle_name: string;
   handle_name_obj: object;
-  tag: string;
-  tag_obj: object;
-  profile_hide: boolean = false;
+  tag: any;
+  profile_hide: boolean = true;
 
   tag_list: any;
   problem_obj: object = {};
@@ -61,7 +60,7 @@ export class CodeforcesComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.displayBasic = false;
+    this.displayBasic = true;
 
     this.cols = [
       { field: 'name', header: 'Name' },
@@ -140,8 +139,8 @@ export class CodeforcesComponent implements OnInit {
   }
 
   problems_post() {
-    this.tag_obj = {tag : this.tag};
-    this._service.problems_post(this.tag_obj).subscribe(
+    console.log(this.tag);
+    this._service.problems_post(this.tag).subscribe(
       res => {
         this.problems_get();
       },

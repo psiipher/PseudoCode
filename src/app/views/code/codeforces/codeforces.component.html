@@ -122,8 +122,7 @@
               <!--TABLE-->
               <p-table [columns]="cols" [value]="problem_obj.problems"
                 styleClass="p-datatable-gridlines p-datatable-striped"
-                [scrollable]="true" scrollHeight="1000px" 
-                [resizableColumns]="true">
+                [scrollable]="true" scrollHeight="1000px"  >
                 <ng-template pTemplate="header" let-columns>
                     <tr>
                         <th *ngFor="let col of columns" [pSortableColumn]="col.field"
