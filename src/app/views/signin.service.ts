@@ -12,7 +12,7 @@ export class SigninService {
   private _registerUrl = "http://localhost:5000/api/register";
   private _todoUrl = "http://localhost:5000/api/todo";
   private _newsUrl = "http://localhost:5000/api/news"
-
+  private _editInfoUrl = "http://localhost:5000/api/editinfo";
   RegisterUser(user)
   {
     return this.http.post<any>(this._registerUrl,user);
@@ -33,5 +33,14 @@ export class SigninService {
 
   news_get() {
     return this.http.get<any>(this._newsUrl);
+  }
+
+  editInfo_get(username) {
+    let _get__editInfoUrl = this._editInfoUrl + '/' + username;
+    return this.http.get<any>(_get__editInfoUrl);
+  }
+
+  editInfo_post(editInfo_obj) {
+    return this.http.post<any>(this._editInfoUrl, editInfo_obj);
   }
 }

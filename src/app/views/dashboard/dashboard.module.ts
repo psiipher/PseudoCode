@@ -8,7 +8,6 @@ import { ButtonsModule } from 'ngx-bootstrap/buttons';
 import { DashboardComponent } from './dashboard.component';
 import { DashboardRoutingModule } from './dashboard-routing.module';
 
-import { StickyNotesModule } from 'pm-sticky-notes';
 
 import {InputTextareaModule} from 'primeng/inputtextarea';
 import {CardModule} from 'primeng/card';
@@ -30,7 +29,6 @@ import {ConfirmationService} from 'primeng/api';
     ChartsModule,
     BsDropdownModule,
     ButtonsModule.forRoot(),
-    StickyNotesModule,
     CardModule,
     InputTextareaModule,
     DividerModule,

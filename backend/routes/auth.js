@@ -167,22 +167,57 @@ router.post('/todo',async (req,res)=>{
     });
 });
 
-function sendtoken(token,id)
-{
-    let query = "UPDATE vendor_master SET jwt_token='" + token + "'  WHERE vendor_id= '" + id +  "' " ;
-    
-    db.query(query, (err, result) => {
+//EDITINFO
 
+router.get('/editinfo/:username',async (req,res)=>{
+
+    let username = req.params.username;
+
+    let get_query = "SELECT * FROM user_master WHERE mail_id ='" + username +  "'";
+
+    db.query(get_query, (err, result) => {
             
         if (err) {
             return res.status(500).json({errors:[{msg:'Query Error'}]})
         }
-        else{
-            console.log("token stored in database");
+        else{           
+            res.json(result);            
         }
-
-
     });
-}
+});
+router.post('/editinfo',async (req,res)=>{
+    console.log(req.body)
+    let{first_name,last_name,phone,mail_id,country,github,linkedin,website} = req.body
+    console.log(mail_id)
+    let post_query = "UPDATE  `user_master` SET first_name='" + first_name + "',last_name='"+last_name+"',phone='"+phone+"',country='"+country+"',github='"+github+"',linkedin='"+linkedin+"',website ='" + website + "' WHERE mail_id= '" + mail_id +  "' ";
+
+    db.query(post_query, (err, result) => {
+            
+        if (err) {
+            return res.status(500).json({errors:[{msg:'Query Error'}]})
+        }
+        else{           
+            res.json(result);            
+        }
+    });
+});
+
+// function sendtoken(token,id)
+// {
+//     let query = "UPDATE vendor_master SET jwt_token='" + token + "'  WHERE vendor_id= '" + id +  "' " ;
+    
+//     db.query(query, (err, result) => {
+
+            
+//         if (err) {
+//             return res.status(500).json({errors:[{msg:'Query Error'}]})
+//         }
+//         else{
+//             console.log("token stored in database");
+//         }
+
+
+//     });
+// }
 
 module.exports = router;
