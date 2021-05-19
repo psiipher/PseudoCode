@@ -1,6 +1,6 @@
-import { Component, ViewEncapsulation } from '@angular/core';
+import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import {FormBuilder, Validators } from '@angular/forms';
+import {FormBuilder } from '@angular/forms';
 import { SigninService } from '../signin.service';
 import { ToastrService } from 'ngx-toastr';
 

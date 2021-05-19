@@ -28,7 +28,7 @@
                         <div class="notes-icons">
                             <button pButton pRipple type="button" icon="pi pi-plus"
                                 class="p-button-rounded p-button-text p-button-lg"
-                                (click)="showModalDialog('left')">
+                                (click)="showModalDialog('center')">
                             </button>
 
                             <p-confirmPopup></p-confirmPopup>
@@ -37,8 +37,8 @@
                                 (click)="confirm($event)"><!--todo_delete();-->
                             </button>
                             <p-dialog header=" " [(visible)]="displayModal" [modal]="true" 
-                                [position]="position" [style]="{width: 'max-content'}" [baseZIndex]="10000"
-                                [draggable]="false" [resizable]="false">
+                                [position]="position" [style]="{width: 'max-content'}"
+                                [baseZIndex]="10000" [draggable]="false" [resizable]="false">
 
                                 <input type="text" pInputText placeholder="Add new activity" [(ngModel)]="todo" />
                                     <ng-template pTemplate="footer">
@@ -49,8 +49,8 @@
                         </div>
                     </ng-template>
                                 
-                    <p-listbox #todo_box styleClass="listbox" [options]="todo_list" [(ngModel)]="selectedTodo"
-                        [listStyle]="{'max-height':'200px'}" >
+                    <p-listbox #todo_box styleClass="listbox" [options]="todo_list" 
+                        [(ngModel)]="selectedTodo" [listStyle]="{'max-height':'200px'}" >
                         <ng-template let-todo pTemplate="item">
                             <div>{{todo}}</div>
                         </ng-template>
@@ -60,15 +60,20 @@
         </p-card>
         <p-card styleClass="right-card">
             <p-card styleClass="newsCard">
-                <ul style="list-style-type:none;">
-                    <li *ngFor="let col of cols" style="color: black; height: 140px;">
-                        {{col.header}}
-                        <hr>
-                    </li>
-                </ul>
+                <dl style="color: rgb(63, 57, 57);" 
+                    *ngFor="let obj of news_list">
+                    <dt>
+                        <img class="news_img" src={{obj.urlToImage}}>
+                        <a href={{obj.url}} target="_blank"><span id="news_heading">{{obj.title}}</span></a> <br>
+                        <small> &rarr; {{obj.publishedAt}} hours ago</small>     
+                    </dt>
+                    <dd>
+                        <span id="news_sub">{{obj.content}}</span>
+                    </dd>
+                    <p-divider></p-divider>
+                </dl>
             
             </p-card>
-            <button (click)="news_get()">NEWS WAALE</button>
         </p-card>
     </div>
 </div>

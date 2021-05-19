@@ -7,8 +7,7 @@
         margin-top:30px;
         height:50rem;
         margin-bottom:30px;
-        font-family:Arial, Helvetica, sans-serif
-
+        font-family:Arial, Helvetica, sans-serif;
     }
 
     &.right-card {
@@ -22,7 +21,7 @@
     &.newsCard {
         background: #e4e7ea;
         margin: 10px 15px 15px 15px;
-        height: 450px;
+        height: max-content;
     }
     
     &.notes {
@@ -64,4 +63,28 @@
     }
 }
 
+#news_heading {
+    
+    font-size: medium;
+    font-weight: bolder;
+    display: inline;
+    padding-right: 15px;
+    padding-top: 10px;
+    color: rgb(62, 104, 104);
+}
+
+.news_img {
+    float: inline-end;
+    width: 110px;
+    height: 80px;
+    border-radius: 10px;
+}
+
+#news_sub {
+    font-size: small;
+    display: inline-block;
+    padding-top: 5px;
+    padding-right: 15px;
+    color: rgb(52, 57, 63);
+}
 

@@ -9,7 +9,6 @@ import { ToastrService } from 'ngx-toastr';
 })
 export class DashboardComponent implements OnInit, AfterViewInit {
 
-  cols : any;
   text: string;
   displayModal: boolean;
   position: string;
@@ -21,9 +20,11 @@ export class DashboardComponent implements OnInit, AfterViewInit {
   todo_obj: object;
   selectedTodo: any;
 
+  news_list : Array<any> = [];
+
   ngOnInit(): void {    
     this.username = localStorage.getItem('username');
-    
+    this.news_get();
   }
 
   ngAfterViewInit() {
@@ -35,12 +36,6 @@ export class DashboardComponent implements OnInit, AfterViewInit {
   constructor(private _service: SigninService, 
               private confirmationService: ConfirmationService,
               private toastr: ToastrService) {
-
-                this.cols = [
-                  { field: 'name', header: 'Name' },
-                  { field: 'rating', header: 'Difficulty'},
-                  { field: 'tags', header: 'Tags' }
-                ];
   }
 
   showModalDialog(position: string) {
@@ -111,7 +106,13 @@ export class DashboardComponent implements OnInit, AfterViewInit {
     
     this._service.news_get().subscribe(
       res => {
-        console.log(res);
+        this.news_list = res.articles.splice(0,3);
+        console.log(this.news_list);
+        for (let i = 0; i < 3; i++) {
+          var current = new Date().toISOString();
+          this.news_list[i].publishedAt = 
+              Math.floor((Date.parse(current) - Date.parse(this.news_list[i].publishedAt))/3600000);
+        }
     },
     err => {
       console.log(err);
