@@ -20,6 +20,7 @@ export class VerifyCertComponent implements OnInit {
   courseUrl: any;
   courseId: any;
   instructorName: any;
+  ic: string="pi pi-check";
 
   constructor(private _service: MoocService, private fb:FormBuilder, private toastr: ToastrService) { 
     this.sites = [
@@ -31,6 +32,11 @@ export class VerifyCertComponent implements OnInit {
 
   ngOnInit(): void {
   }
+
+  change_ic(ic:string){
+    this.ic = ic;
+  }
+
 
   get platform()
   {
@@ -66,6 +72,7 @@ export class VerifyCertComponent implements OnInit {
   }
 
   define_value(res) {
+      this.ic = 'pi pi-check'
       if (res.isVerified === undefined || res.isVerified === true) {
 
         if (res.type === "Udemy") {

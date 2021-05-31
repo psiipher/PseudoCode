@@ -12,8 +12,9 @@ export class CodeforcesComponent implements OnInit {
   handle_name: string;
   handle_name_obj: object;
   tag: any;
-  profile_hide: boolean = false;
-
+  profile_hide: boolean = true;
+  ic_user:string = "pi pi-check";
+  ic_pr:string = "pi pi-check";
   tag_list: any;
   problem_obj: object = {};
   cols: any[];
@@ -61,6 +62,11 @@ export class CodeforcesComponent implements OnInit {
 
   ngOnInit(): void {
     this.displayBasic = true;
+    if(localStorage.getItem('cf_handleName') != ''){
+      this.handle_name = localStorage.getItem('cf_handleName');
+      this.profile_hide = false;
+      this.handleName_post();
+    }
 
     this.cols = [
       { field: 'name', header: 'Name' },
@@ -106,6 +112,7 @@ export class CodeforcesComponent implements OnInit {
   //USER PROFILE
 
   handleName_post() {
+    localStorage.setItem('cf_handleName', this.handle_name);
     this.handle_name_obj = {handle_name : this.handle_name};
     this._service.handleName_post(this.handle_name_obj).subscribe(
       res => {
@@ -140,6 +147,19 @@ export class CodeforcesComponent implements OnInit {
     });
   }
 
+  change_profile(val:boolean){
+    localStorage.setItem('cf_handleName', '');
+    this.profile_hide=val;
+    this.handle_name="";
+    this.ic_user="pi pi-check";
+  }
+
+  change_icon(){
+    this.ic_user = "pi pi-spin pi-spinner";
+  }
+
+
+
   //PROBLEMS
 
 
@@ -147,6 +167,7 @@ export class CodeforcesComponent implements OnInit {
     this._service.problems_get().subscribe(
       res => {
         this.problem_obj = res.result;
+        this.ic_pr='pi pi-check';
     },
     err => {
       console.log(err);
@@ -164,6 +185,9 @@ export class CodeforcesComponent implements OnInit {
     )
   }
 
+  change_ic_pr(){
+    this.ic_pr ='pi pi-spin pi-spinner';
+  }
 
 }
 

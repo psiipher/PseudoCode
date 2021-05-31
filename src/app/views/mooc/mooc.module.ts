@@ -33,6 +33,7 @@ import { ToastrModule } from 'ngx-toastr';
     ToastrModule.forRoot(),
     ButtonModule,
     
+    
   ]
 })
 export class MoocModule { }

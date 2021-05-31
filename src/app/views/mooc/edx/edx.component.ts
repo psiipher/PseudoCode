@@ -9,6 +9,8 @@ export class EdxComponent implements OnInit {
 
   constructor() { }
 
+
+  
   ngOnInit(): void {
   }
 
