@@ -1,6 +1,6 @@
 <!--Dialog Start-->
 
-<p-dialog header="Header" [(visible)]="displayBasic" 
+<!-- <p-dialog header="Header" [(visible)]="displayBasic" 
     [modal]="true" [style]="{width: '50vw'}" [baseZIndex]="10000">
     <p>Please enter your Codeforces handle name</p>
     <br>
@@ -13,15 +13,38 @@
         <p-button label="Submit" icon="pi pi-check" (click)="handleName_post(); displayBasic=false"></p-button>
     </ng-template>
 
-</p-dialog>
+</p-dialog> -->
 
 <!--Dialog End-->
 
-<p-card [hidden]='profile_hide'>
+<p-card>
     <p-tabView>        
-        <p-tabPanel header="User Profile">   
+        <p-tabPanel header="User Profile"> 
+          <div class="row" [hidden]='!profile_hide'>
+            <div class="col-4">
+                <p-card [style]="{'margin-top': '2em'}" styleClass="card1">
+                  <h5 style="padding-left: 7px;"><b>Please enter Codeforces handle name</b></h5>
+                  <br>
+                  
+                  <span class="p-float-label">
+                    <input id="handle_name" type="text" pInputText [(ngModel)]="handle_name"> 
+                    <label for="handle_name">Handle Name</label>
+                  </span>
+                
+                  
+                  <ng-template pTemplate="footer">
+                    <button pButton type="button" label="Submit" icon="{{ic_user}}"
+                      class="p-button-sm" (click)="handleName_post(); change_icon();"></button>
+                  </ng-template>
+                </p-card>
+            </div>
+          </div> 
+            
+
+
+
           <!--Profile Start-->
-          <div class="container animated fadeIn">
+          <div class="container animated fadeIn" [hidden]='profile_hide'>
               <div class="main-body">
                   <div class="row">
                       <div class="col-sm-4 col-md-4 col-4">
@@ -30,7 +53,9 @@
                                   <img src={{handle_info.titlePhoto}} alt="Avatar" 
                                       style="border-radius: 50%; width: 130px; height: 130px;">
                                   <br><br>
-                                  <h3><b>{{handle_info.firstName}} {{handle_info.lastName}}</b></h3>
+                                  <h3><b>{{handle_info.firstName}} {{handle_info.lastName}}</b>
+                                    <button type="button" class="btn btn-ghost-secondary btn-sm" (click)= "change_profile(true)"><i class="cil-pencil"></i></button>
+                                    </h3>
                                   <h5>{{handle_info.city}}, {{handle_info.country}}</h5>
                               </div>
                           </p-card>
@@ -112,8 +137,8 @@
                 
                   
                   <ng-template pTemplate="footer">
-                    <button pButton type="button" label="Submit" icon="pi pi-check"
-                      class="p-button-sm" (click)="problems_post();"></button>
+                    <button pButton type="button" label="Submit" icon="{{ic_pr}}"
+                      class="p-button-sm" (click)="problems_post();change_ic_pr();"></button>
                   </ng-template>
                 </p-card>
             </div>              
@@ -185,5 +210,7 @@
           </p-tabPanel> -->
 
     </p-tabView>
+    
+    
 </p-card>
 
