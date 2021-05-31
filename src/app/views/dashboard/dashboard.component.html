@@ -8,15 +8,24 @@
                 <img src="assets/img/avatars/t.jpg" alt="Avatar" 
                     style="border-radius: 50%; width: 170px; height: 160px;">
                 <br><br>
-                <h3 class="text-black d-block"><b>Tushar Baid</b></h3>
-                <span class="d-block">India</span>
+                <h3 class="text-black d-block"><b>{{user_info[0].first_name}} {{user_info[0].last_name}}</b></h3>
+                <span class="d-block">{{user_info[0].country}}</span>
                 <div class="icons">
-                    <button pButton pRipple type="button" icon="icon-social-github" 
-                        class="p-button-rounded p-button-text font-xl p-button-plain"></button>
-                    <button pButton pRipple type="button" icon="icon-social-linkedin" 
-                        class="p-button-rounded p-button-text font-xl p-button-primary"></button>
-                    <button pButton pRipple type="button" icon="icon-globe" 
-                        class="p-button-rounded p-button-text font-xl p-button-success"></button>
+                    
+                    <a href="{{user_info[0].github}}" target="_blank">
+                        <button pButton pRipple type="button" icon="icon-social-github" 
+                            class="p-button-rounded p-button-text font-xl p-button-plain"></button>
+                    </a>
+
+                    <a href="{{user_info[0].linkedin}}" target="_blank">
+                        <button pButton pRipple type="button" icon="icon-social-linkedin" 
+                            class="p-button-rounded p-button-text font-xl p-button-primary"></button>
+                    </a>
+
+                    <a href="{{user_info[0].website}}" target="_blank">
+                        <button pButton pRipple type="button" icon="icon-globe" 
+                            class="p-button-rounded p-button-text font-xl p-button-success"></button>
+                    </a>
                 </div>                
             </div>
             <p-divider></p-divider>

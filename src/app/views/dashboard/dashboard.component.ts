@@ -13,6 +13,7 @@ export class DashboardComponent implements OnInit, AfterViewInit {
   displayModal: boolean;
   position: string;
 
+  user_info: any = {0: []};
   username: string;
   todo: string;
   counter: any = 0;
@@ -25,6 +26,7 @@ export class DashboardComponent implements OnInit, AfterViewInit {
   ngOnInit(): void {    
     this.username = localStorage.getItem('username');
     this.news_get();
+    this.userInfo_get();
   }
 
   ngAfterViewInit() {
@@ -43,6 +45,13 @@ export class DashboardComponent implements OnInit, AfterViewInit {
     this.displayModal = true;
   }   
 
+  //USER_INFO 
+  userInfo_get() {
+    this._service.editInfo_get(this.username).subscribe(      
+      res => {
+        this.user_info = res;
+    });
+  }
 
   //TODO
   todo_get() {
@@ -107,7 +116,6 @@ export class DashboardComponent implements OnInit, AfterViewInit {
     this._service.news_get().subscribe(
       res => {
         this.news_list = res.articles.splice(0,3);
-        console.log(this.news_list);
         for (let i = 0; i < 3; i++) {
           var current = new Date().toISOString();
           this.news_list[i].publishedAt = 

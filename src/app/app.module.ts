@@ -55,6 +55,7 @@ import {CardModule} from 'primeng/card';
 import {InputTextModule} from 'primeng/inputtext';
 import {ButtonModule} from 'primeng/button';
 import {MenubarModule} from 'primeng/menubar';
+import {DialogModule} from 'primeng/dialog';
 
 @NgModule({
   imports: [
@@ -79,7 +80,8 @@ import {MenubarModule} from 'primeng/menubar';
     CardModule,
     InputTextModule,
     ButtonModule,
-    MenubarModule
+    MenubarModule,
+    DialogModule,
   ],
   declarations: [
     AppComponent,
