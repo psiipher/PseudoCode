@@ -18,6 +18,7 @@ import {ListboxModule} from 'primeng/listbox';
 import {DialogModule} from 'primeng/dialog';
 import {InputTextModule} from 'primeng/inputtext';
 import {ConfirmPopupModule} from 'primeng/confirmpopup';
+import {ProgressSpinnerModule} from 'primeng/progressspinner';
 
 import {ConfirmationService} from 'primeng/api';
 
@@ -38,7 +39,8 @@ import {ConfirmationService} from 'primeng/api';
     DialogModule,
     InputTextModule,
     ConfirmPopupModule,
-    CommonModule
+    CommonModule,
+    ProgressSpinnerModule
   ],
   declarations: [ DashboardComponent ],
   providers: [ConfirmationService]

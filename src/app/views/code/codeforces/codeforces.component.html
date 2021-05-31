@@ -16,18 +16,19 @@
 </p-dialog> -->
 
 <!--Dialog End-->
-
+<br>
+<br>
 <p-card>
     <p-tabView>        
         <p-tabPanel header="User Profile"> 
           <div class="row" [hidden]='!profile_hide'>
             <div class="col-4">
-                <p-card [style]="{'margin-top': '2em'}" styleClass="card1">
+                <p-card [style]="{'margin-top': '1em', 'width': 'max-content'}" styleClass="card1">
                   <h5 style="padding-left: 7px;"><b>Please enter Codeforces handle name</b></h5>
                   <br>
                   
                   <span class="p-float-label">
-                    <input id="handle_name" type="text" pInputText [(ngModel)]="handle_name"> 
+                    <input id="handle_name" type="text" pInputText [(ngModel)]="handle_name" [style]="{'minWidth':'100%'}"> 
                     <label for="handle_name">Handle Name</label>
                   </span>
                 
@@ -54,7 +55,7 @@
                                       style="border-radius: 50%; width: 130px; height: 130px;">
                                   <br><br>
                                   <h3><b>{{handle_info.firstName}} {{handle_info.lastName}}</b>
-                                    <button type="button" class="btn btn-ghost-secondary btn-sm" (click)= "change_profile(true)"><i class="cil-pencil"></i></button>
+                                    <button type="button" class="btn btn-ghost-secondary" (click)= "change_profile(true)"><i class="cil-pencil"></i></button>
                                     </h3>
                                   <h5>{{handle_info.city}}, {{handle_info.country}}</h5>
                               </div>

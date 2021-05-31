@@ -68,7 +68,13 @@
 
         </p-card>
         <p-card styleClass="right-card">
+            <button pButton pRipple type="button" icon="pi pi-refresh" style="float:right;"
+                class="p-button-rounded p-button-text" (click)="news_get()"></button>
+                <br>   
             <p-card styleClass="newsCard">
+                <div style="text-align: center; margin-top: 30%;" [hidden]='spinner_hide'>
+                    <p-progressSpinner></p-progressSpinner>
+                </div>
                 <dl style="color: rgb(63, 57, 57);" 
                     *ngFor="let obj of news_list">
                     <dt>

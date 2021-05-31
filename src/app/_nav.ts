@@ -31,7 +31,7 @@ export const navItems: INavData[] = [
   {
     name: 'Learn',
     url: '/learn',
-    icon: 'icon-puzzle',
+    icon: 'icon-notebook',
     children: [
       {
         name: 'Data Structures',
@@ -41,7 +41,7 @@ export const navItems: INavData[] = [
       {
         name: 'Algorithms',
         url: '/learn/algorithms',
-        icon: 'icon-puzzle'
+        icon: 'icon-graph'
       }
      
     ]
@@ -49,34 +49,34 @@ export const navItems: INavData[] = [
   {
     name: 'MOOC',
     url: '/mooc',
-    icon: 'icon-puzzle',
+    icon: 'icon-screen-desktop',
     children: [
-      {
-        name: 'edx',
-        url: '/mooc/edx',
-        icon: 'icon-puzzle'
-      },
+      // {
+      //   name: 'edx',
+      //   url: '/mooc/edx',
+      //   icon: 'icon-puzzle'
+      // },
       {
         name: 'Verify Certificate',
         url: '/mooc/verify-cert',
-        icon: 'icon-puzzle'
+        icon: 'icon-badge'
       },    
     ]
   },
   {
     name: 'Code',
     url: '/code',
-    icon: 'icon-puzzle',
+    icon: 'cil-code',
     children: [
       {
         name: 'Codeforces',
         url: '/code/codeforces',
-        icon: 'icon-puzzle'
+        icon: 'icon-energy'
       }, 
       {
         name: 'JS-Editor',
         url: '/code/js-editor',
-        icon: 'icon-puzzle'
+        icon: 'icon-note'
       }, 
     ]
   },

@@ -6,7 +6,7 @@ import { CodeRoutingModule } from './code-routing.module';
 import {EditorModule} from 'primeng/editor';
 import {InputTextareaModule} from 'primeng/inputtextarea';
 import {TooltipModule} from 'primeng/tooltip';
-import {MessagesModule} from 'primeng/messages';
+import {MessageModule} from 'primeng/message';
 
 
 
@@ -41,7 +41,7 @@ import { JsEditorComponent } from './js-editor/js-editor.component';
     EditorModule,
     InputTextareaModule,
     TooltipModule,
-    MessagesModule
+    MessageModule
   ]
 })
 export class CodeModule { }

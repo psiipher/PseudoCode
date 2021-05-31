@@ -21,6 +21,7 @@ export class DashboardComponent implements OnInit, AfterViewInit {
   todo_obj: object;
   selectedTodo: any;
 
+  spinner_hide: boolean = false;
   news_list : Array<any> = [];
 
   ngOnInit(): void {    
@@ -111,16 +112,27 @@ export class DashboardComponent implements OnInit, AfterViewInit {
   }
 
   //NEWS
+
+  getRandomItem(arr) {
+    const randomIndex = Math.floor(Math.random() * arr.length);
+    const item = arr[randomIndex];
+    return item;
+}
   news_get() {
     
     this._service.news_get().subscribe(
       res => {
         this.news_list = res.articles.splice(0,3);
+        for (let i = 0; i < 3; i ++) {
+          this.news_list[i] = this.getRandomItem(res.articles);
+        }
         for (let i = 0; i < 3; i++) {
+
           var current = new Date().toISOString();
           this.news_list[i].publishedAt = 
               Math.floor((Date.parse(current) - Date.parse(this.news_list[i].publishedAt))/3600000);
         }
+        this.spinner_hide = true;
     },
     err => {
       console.log(err);

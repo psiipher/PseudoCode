@@ -1,10 +1,14 @@
-<p-messages [(value)]="msg" [enableService]="false"></p-messages>
-<br>
-<p-messages [(value)]="msgs1" [enableService]="false"></p-messages>
+<!-- <p-messages [(value)]="msg" [enableService]="false" styleClass="p-mr-2"></p-messages> -->
+<!-- <div class="pull-right" style="margin-top: 5px; margin-right: 10px;">
+    <p-message severity="info" text="Please select </> to enable the code-block" 
+        styleClass="p-mr-2"></p-message>
+</div> -->
+<br><br>
 <p-editor [(ngModel)]="text" [style]="{'height':'320px'}">
     <ng-template pTemplate="header">
         <span class="ql-formats">
-            <button pButton type="button" class="ql-code-block" aria-label="Code" pTooltip="Please click to enable Code-block"></button>
+            <button pButton type="button" class="ql-code-block" aria-label="Code" 
+                pTooltip="Please click to enable Code-block"></button>
         </span>
     </ng-template>
 </p-editor>

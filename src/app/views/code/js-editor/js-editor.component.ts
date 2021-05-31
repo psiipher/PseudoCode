@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CodeService } from '../code.service';
-import {Message,MessageService} from 'primeng/api';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-js-editor',
@@ -14,12 +14,11 @@ export class JsEditorComponent implements OnInit {
   output: string='';
   displayModal: boolean;
   Er: boolean;
-  msg:Message[]
 
 
 
 
-  constructor(private _service: CodeService) {   }
+  constructor(private _service: CodeService, private toastr: ToastrService) {   }
   post_code()
   {
     this.user_code = {code:this.text}
@@ -57,9 +56,10 @@ export class JsEditorComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.msg = [
-      {severity:'info', summary:'Info', detail:'Please Select </> to enable the Code-block'},
-    ];
+    // this.msg = [
+    //   {severity:'info', summary:'Info', detail:'Please Select </> to enable the Code-block'},
+    // ];
+    this.toastr.info("Please select </> to enable the code-block");
   }
 
 }

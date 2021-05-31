@@ -11,7 +11,8 @@ import { ToastrService } from 'ngx-toastr';
 })
 export class LoginComponent { 
 
-  constructor(private fb:FormBuilder, private SigninService:SigninService, private router: Router, private toastr: ToastrService) { }
+  constructor(private fb:FormBuilder, private SigninService:SigninService, private router: Router, 
+      private toastr: ToastrService) { }
 
   get password()
   {
