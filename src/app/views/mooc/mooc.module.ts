@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { EdxComponent } from './edx/edx.component';
+import { UdemyComponent } from './udemy/udemy.component';
 
 import { MoocRoutingModule } from './mooc-routing.module';
 import { VerifyCertComponent } from './verify-cert/verify-cert.component';
@@ -18,7 +18,7 @@ import {ButtonModule} from 'primeng/button';
 import { ToastrModule } from 'ngx-toastr';
 
 @NgModule({
-  declarations: [EdxComponent, VerifyCertComponent],
+  declarations: [UdemyComponent, VerifyCertComponent],
   imports: [
     CommonModule,
     MoocRoutingModule,

@@ -5,11 +5,12 @@ var cert= require('verify-certification');
 var platform;
 var id;
 
+
 //W54XDBFBYXU2
 router.get('/',async(req,res) => {
     cert.verify(platform, id).then(
         result => {
-                console.log(JSON.stringify(result));
+                //console.log(JSON.stringify(result));
                 res.send(JSON.stringify(result));
             },
         err => {

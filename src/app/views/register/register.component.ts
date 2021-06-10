@@ -57,6 +57,7 @@ export class RegisterComponent {
       localStorage.setItem('username', this.registration.value.mail_id),
       this.router.navigate(['/dashboard']),
       this.toastr.success('Welcome to PseudoCode');
+      this.toastr.info("You can add more information by clicking on Edit Info button!");
     },
     err => {
       console.log(err),

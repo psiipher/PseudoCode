@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
-import { EdxComponent } from './edx/edx.component';
+import { UdemyComponent } from './udemy/udemy.component';
 import { VerifyCertComponent } from './verify-cert/verify-cert.component';
 
 
@@ -14,13 +14,13 @@ const routes: Routes = [
     children: [
       {
         path: '',
-        redirectTo: 'edx'
+        redirectTo: 'udemy'
       },
       {
-        path: 'edx',
-        component: EdxComponent,
+        path: 'udemy',
+        component: UdemyComponent,
         data: {
-          title: 'edx'
+          title: 'udemy'
         }
       },
       {

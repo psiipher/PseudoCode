@@ -26,7 +26,7 @@ export class VerifyCertComponent implements OnInit {
     this.sites = [
       {name: 'Coursera', code: 'coursera'},
       {name: 'Udemy', code: 'udemy'},
-      {name: 'EDX', code: 'edx'},
+      {name: 'EDX', code: 'udemy'},
   ];
   }
 
@@ -51,7 +51,7 @@ export class VerifyCertComponent implements OnInit {
   onSubmit() {
     this._service.verify_post(this.verify_cert.value).subscribe(
       res => {
-        console.log(this.verify_cert.value);
+        //console.log(this.verify_cert.value);
         this.verify_get();
       },
       err => {
@@ -93,7 +93,7 @@ export class VerifyCertComponent implements OnInit {
         this.position = 'right';
 
 
-        console.log(this.courseUrl);
+        //console.log(this.courseUrl);
       }
       
     else{

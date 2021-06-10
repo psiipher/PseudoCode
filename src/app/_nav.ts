@@ -51,11 +51,11 @@ export const navItems: INavData[] = [
     url: '/mooc',
     icon: 'icon-screen-desktop',
     children: [
-      // {
-      //   name: 'edx',
-      //   url: '/mooc/edx',
-      //   icon: 'icon-puzzle'
-      // },
+      {
+        name: 'udemy',
+        url: '/mooc/udemy',
+        icon: 'icon-puzzle'
+      },
       {
         name: 'Verify Certificate',
         url: '/mooc/verify-cert',
