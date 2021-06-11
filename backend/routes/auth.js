@@ -1,51 +1,29 @@
 const express = require('express');
 const router = express.Router();
-const auth = require('../middleware/auth');
-const jwt = require('jsonwebtoken');
-const config = require('config');
-
-
-
-//  @route    /api/auth
-//  @desc     authorize the user
-//  @access   public
-//  @type     POST
 
 router.post('/register',async (req,res)=>{
 
     let {first_name, last_name, mail_id,password,phone} = req.body;
     console.log(req.body);
-    try
-    {
+    try {
+        
         let query =  "INSERT INTO `user_master` (`user_id`, `first_name`, `last_name`, `phone`, `mail_id`, `password`) VALUES (NULL,'"+ first_name + "','"+ last_name + "', '"+ phone + "', '"+ mail_id + "','"+ password + "')";
         
-        db.query(query, (err, result) => {
-
-            
+        db.query(query, (err, result) => {            
             if (err) {
                 return res.status(500).json({errors:[{msg:'Query Error'}]})
             }
             else{
                 res.json({msg:`User Registered with id ${result.insertId}`});
-            }
-
-
-            
-            
-});  
-
-       
-    }catch(err)
-    {
-
-        if(err)
-        {
+            }          
+        });  
+    }
+    catch(err) {
+        if(err) {
             console.log(err.message);
             res.status(500).send('Server Error');
         }
-    }
-    
-
+    }   
 });
 
 
@@ -85,29 +63,14 @@ router.post('/login',async (req,res)=>{
                      }
                  }
 
-                 //Extract user id to request parameter
-                 //req.id = result[0].vendor_id;
-
                  if(password === result[0].password)//Password Match
                  {
-                    //res.json({"profile":result[0]});
-                    // jwt.sign(payload,config.get('jwtSecret'),{expiresIn:360000 },(err,token)=>{
-                    //     if(err)
-                    //     {
-                    //         throw err;
-                    //     }
-            
-                    //     res.json({token});
-                    //     sendtoken(token,result[0].vendor_id);
-                    // })
-                    res.json({msg:`Welcome user`});
-                    
+                    res.json({msg:`Welcome user`});                    
                  }
                  else
                  {
                     return  res.status(400).json({errors:[{msg:'Invalid Credentials'}]});
                  }
-               // res.json({"password":result[0].password});
             }
 
 
