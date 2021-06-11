@@ -3,18 +3,18 @@ import { Courses } from '../courses';
 import { MoocService } from '../mooc.service';
 
 @Component({
-  selector: 'app-udemy',
-  templateUrl: './udemy.component.html',
-  styleUrls: ['./udemy.component.scss']
+  selector: 'app-coursera',
+  templateUrl: './coursera.component.html',
+  styleUrls: ['./coursera.component.scss']
 })
-export class UdemyComponent implements OnInit {
+export class CourseraComponent implements OnInit {
 
   courses: Courses[];
   cols: any[];
   constructor( private moocService: MoocService ) { }
 
   ngOnInit(): void {
-      this.moocService.getUdemy().then(courses => {
+    this.moocService.getCoursera().then(courses => {
       this.courses = courses;
       console.log(this.courses);
     });

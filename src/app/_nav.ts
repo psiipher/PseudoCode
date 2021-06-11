@@ -52,8 +52,18 @@ export const navItems: INavData[] = [
     icon: 'icon-screen-desktop',
     children: [
       {
-        name: 'udemy',
+        name: 'Udemy',
         url: '/mooc/udemy',
+        icon: 'icon-puzzle'
+      },
+      {
+        name: 'Coursera',
+        url: '/mooc/coursera',
+        icon: 'icon-puzzle'
+      },
+      {
+        name: 'Udacity',
+        url: '/mooc/udacity',
         icon: 'icon-puzzle'
       },
       {
