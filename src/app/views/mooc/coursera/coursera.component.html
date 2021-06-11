@@ -1,12 +1,12 @@
 <br><br>
 <p-card >
-    <p-table #dt1 [columns]="cols" [value]="courses" [paginator]="true" [rows]="10"
+    <p-table #dt1 [columns]="cols" [value]="courses" [paginator]="true" [rows]="7"
         styleClass="p-datatable-gridlines p-datatable" 
         [globalFilterFields]="['course_title','organization','level']">
 
         <ng-template pTemplate="caption">
             <div class="table-header">
-                Udemy Courses
+                Coursera Courses
                 <span class="p-input-icon-left" style="float: right;">
                     <i class="pi pi-search"></i>
                     <input pInputText type="text" (input)="dt.filterGlobal($event.target.value, 'contains')" placeholder="Search" />

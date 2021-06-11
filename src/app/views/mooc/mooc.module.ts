@@ -14,11 +14,14 @@ import {InputTextModule} from 'primeng/inputtext';
 import {DialogModule} from 'primeng/dialog';
 import { TagModule } from 'primeng/tag';
 import {ButtonModule} from 'primeng/button';
+import {TableModule} from 'primeng/table';
 
 import { ToastrModule } from 'ngx-toastr';
+import { CourseraComponent } from './coursera/coursera.component';
+import { UdacityComponent } from './udacity/udacity.component';
 
 @NgModule({
-  declarations: [UdemyComponent, VerifyCertComponent],
+  declarations: [UdemyComponent, VerifyCertComponent, CourseraComponent, UdacityComponent],
   imports: [
     CommonModule,
     MoocRoutingModule,
@@ -32,8 +35,7 @@ import { ToastrModule } from 'ngx-toastr';
     TagModule,
     ToastrModule.forRoot(),
     ButtonModule,
-    
-    
+    TableModule,
   ]
 })
 export class MoocModule { }

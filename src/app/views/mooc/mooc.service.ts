@@ -10,13 +10,24 @@ export class MoocService {
 
   private _verifyUrl = "http://localhost:5000/api/verify-cert";
 
-  getCourses() {
-    return this.http.get<any>('assets/courses.json')
+  getUdemy() {
+    return this.http.get<any>('assets/udemy.json')
         .toPromise()
         .then(res => <Courses[]>res.data)
         .then(data => { return data; });
   }
-
+  getCoursera() {
+    return this.http.get<any>('assets/coursera.json')
+        .toPromise()
+        .then(res => <Courses[]>res.data)
+        .then(data => { return data; });
+  }
+  getUdacity() {
+    return this.http.get<any>('assets/udacity.json')
+        .toPromise()
+        .then(res => <Courses[]>res.data)
+        .then(data => { return data; });
+  }
   verify_post(obj)
   {
     return this.http.post<any>(this._verifyUrl, obj);
