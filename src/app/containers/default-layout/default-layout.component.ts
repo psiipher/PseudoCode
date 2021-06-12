@@ -140,7 +140,7 @@ export class DefaultLayoutComponent implements OnInit {
 
     this._service.editInfo_post(this.edit_info.value).subscribe(
       res => {
-        console.log("success")
+          window.location.reload();
       },
       err => {
         console.log(err);

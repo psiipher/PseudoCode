@@ -9,6 +9,7 @@ export class MoocService {
   constructor(private http: HttpClient) { }
 
   private _verifyUrl = "http://localhost:5000/api/verify-cert";
+  private _recommenderUrl = "http://localhost:5000/api/recommender";
 
   getUdemy() {
     return this.http.get<any>('assets/udemy.json')
@@ -36,5 +37,14 @@ export class MoocService {
   verify_get()
   {
     return this.http.get<any>(this._verifyUrl);
+  }
+
+  getRecommendation() {
+    return this.http.get<any>(this._recommenderUrl);
+  }
+
+  title_post(title)
+  {
+    return this.http.post<any>(this._recommenderUrl, title);
   }
 }

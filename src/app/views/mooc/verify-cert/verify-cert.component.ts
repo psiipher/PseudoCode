@@ -26,7 +26,7 @@ export class VerifyCertComponent implements OnInit {
     this.sites = [
       {name: 'Coursera', code: 'coursera'},
       {name: 'Udemy', code: 'udemy'},
-      {name: 'EDX', code: 'udemy'},
+      {name: 'EDX', code: 'edx'},
   ];
   }
 

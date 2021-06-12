@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { CourseraComponent } from './coursera/coursera.component';
-import { UdacityComponent } from './udacity/udacity.component';
 
 import { UdemyComponent } from './udemy/udemy.component';
 import { VerifyCertComponent } from './verify-cert/verify-cert.component';
@@ -30,13 +29,6 @@ const routes: Routes = [
         component: CourseraComponent,
         data: {
           title: 'Coursera'
-        }
-      },
-      {
-        path: 'udacity',
-        component: UdacityComponent,
-        data: {
-          title: 'Udacity'
         }
       },
       {

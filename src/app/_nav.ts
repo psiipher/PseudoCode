@@ -62,11 +62,6 @@ export const navItems: INavData[] = [
         icon: 'icon-puzzle'
       },
       {
-        name: 'Udacity',
-        url: '/mooc/udacity',
-        icon: 'icon-puzzle'
-      },
-      {
         name: 'Verify Certificate',
         url: '/mooc/verify-cert',
         icon: 'icon-badge'

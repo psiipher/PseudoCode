@@ -18,10 +18,9 @@ import {TableModule} from 'primeng/table';
 
 import { ToastrModule } from 'ngx-toastr';
 import { CourseraComponent } from './coursera/coursera.component';
-import { UdacityComponent } from './udacity/udacity.component';
 
 @NgModule({
-  declarations: [UdemyComponent, VerifyCertComponent, CourseraComponent, UdacityComponent],
+  declarations: [UdemyComponent, VerifyCertComponent, CourseraComponent],
   imports: [
     CommonModule,
     MoocRoutingModule,
