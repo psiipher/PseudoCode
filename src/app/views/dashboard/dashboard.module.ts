@@ -19,6 +19,7 @@ import {DialogModule} from 'primeng/dialog';
 import {InputTextModule} from 'primeng/inputtext';
 import {ConfirmPopupModule} from 'primeng/confirmpopup';
 import {ProgressSpinnerModule} from 'primeng/progressspinner';
+import {OverlayPanelModule} from 'primeng/overlaypanel';
 
 import {ConfirmationService} from 'primeng/api';
 
@@ -40,7 +41,8 @@ import {ConfirmationService} from 'primeng/api';
     InputTextModule,
     ConfirmPopupModule,
     CommonModule,
-    ProgressSpinnerModule
+    ProgressSpinnerModule,
+    OverlayPanelModule
   ],
   declarations: [ DashboardComponent ],
   providers: [ConfirmationService]

@@ -25,6 +25,7 @@ import { P500Component } from './views/error/500.component';
 import { LoginComponent } from './views/login/login.component';
 import { RegisterComponent } from './views/register/register.component';
 
+import { RouterGuardGuard } from './views/router-guard.guard';
 import { SigninService } from './views/signin.service';
 
 const APP_CONTAINERS = [
@@ -97,7 +98,8 @@ import {DialogModule} from 'primeng/dialog';
       useClass: HashLocationStrategy
     },
     IconSetService,
-    SigninService
+    SigninService,
+    RouterGuardGuard
   ],
   bootstrap: [ AppComponent ]
 })

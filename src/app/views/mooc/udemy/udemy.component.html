@@ -18,9 +18,16 @@
         <ng-template pTemplate="header" let-columns >
             <tr>
                 <th *ngFor="let col of columns" [ngStyle]="styleObject(col.field)" pSortableColumn="{{col.field}}">
-                    {{col.header}}
-                    <p-sortIcon field="{{col.field}}"></p-sortIcon> 
+                    <div *ngIf="col.header=='URL'">
+                        {{col.header}}
+                    </div>
+                    <div *ngIf="col.header!='URL'">
+                        {{col.header}}
+                        <p-sortIcon field="{{col.field}}"></p-sortIcon> 
+                    </div>                
+
                 </th>
+                <th style="width:60px">Similar Courses</th>
             </tr>
         </ng-template>
         <ng-template pTemplate="body" let-rowData let-columns="columns">
@@ -31,12 +38,67 @@
                         <i class="pi pi-external-link"></i>
                         </a> 
                     </div>
-                    <div *ngIf="col.field !='url'">
+                    <div *ngIf="col.field =='course_title'">
+                        <b>{{rowData[col.field]}}</b>
+                    </div>
+                    <div *ngIf="col.field !='url' && col.field !='course_title'">
                         {{rowData[col.field]}}
                     </div>
+                </td>
+                <td style="text-align: center;">
+                    <button pButton pRipple type="button" label="Search" icon="{{ic}}"
+                        class="p-button-raised p-button-success p-button-text p-button-sm" 
+                        (click)="selectTitle(rowData); change_ic('pi pi-spin pi-spinner')">
+                    </button>
+                    <!-- <button type="button" pButton pRipple icon="pi pi-search" (click)="selectTitle(rowData)">Search</button> -->
                 </td>
             </tr>
         </ng-template>
     </p-table>
-
 </p-card>
+
+<p-dialog header="Recommendations for you!" [(visible)]="sidebar"  [modal]="true" 
+    [baseZIndex]="10000" [style]="{width: '70vw'}"
+    [draggable]="false" [resizable]="false">
+    <span style="color: blanchedalmond;">Showing courses similar to: <b>{{name}}</b></span>
+        <!--TABLE-->
+    <p-table [columns]="cols_recommender" [value]="recommender_obj"
+        styleClass="p-datatable-striped p-datatable1">
+        <ng-template pTemplate="header" let-columns>
+            <tr style="width: fit-content;">
+                <th *ngFor="let col of columns" [ngStyle]="styleRecommender(col.field)">
+                    {{col.header}}
+                </th> 
+            </tr>
+        </ng-template>
+        <ng-template pTemplate="body" let-rowData>
+            <tr *ngFor="let number of [0,1,2,3,4]">
+                <td style="width: 140px;">{{rowData.a[number]}}</td>
+                <td style="width: 50px;">
+                    <div *ngIf="rowData.c[number].trim()==='coursera'"
+                        style="color: rgb(57, 57, 228); ">
+                        <p-tag value="coursera"></p-tag>
+                        
+                    </div>
+                    <div *ngIf="rowData.c[number].trim()==='udemy'"
+                        style="color: rgb(250, 84, 84);">
+                        <p-tag  severity="danger" value="Udemy"></p-tag>
+                    </div>
+                    <div *ngIf="rowData.c[number].trim()==='pluralsight'"
+                        style="color: rgb(248, 145, 77);">
+                        <p-tag severity="warning" value="PLURALSIGHT"></p-tag>
+                    </div>
+                </td>
+                <td style="width: 30px;">
+                    <a href={{rowData.b[number]}} target="_blank">
+                        <i class="pi pi-external-link"></i>
+                    </a> 
+                </td>
+            </tr>
+        </ng-template>   
+    </p-table>
+    
+        <ng-template pTemplate="footer">
+            <p-button icon="pi pi-check" (click)="sidebar=false" label="Done" styleClass="p-button-text"></p-button>
+        </ng-template>
+</p-dialog>

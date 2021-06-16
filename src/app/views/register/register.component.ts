@@ -58,6 +58,7 @@ export class RegisterComponent {
       this.router.navigate(['/dashboard']),
       this.toastr.success('Welcome to PseudoCode');
       this.toastr.info("You can add more information by clicking on Edit Info button!");
+      localStorage.setItem('image_url', "assets/img/addImage.png");
     },
     err => {
       console.log(err),

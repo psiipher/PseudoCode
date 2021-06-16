@@ -2,11 +2,25 @@
 <!-- <div class="card">
     <sticky-notes (onblur)="getnote($event)" [data]="data"></sticky-notes >
 </div> -->
+
+<!-- IMAGE OVERLAY-->
+
+<p-overlayPanel #op [dismissable]="true" [showCloseIcon]="true">
+    <ng-template pTemplate>
+        <b><h6>Enter your image url</h6></b>
+        <input type="text" pInputText [(ngModel)]="image_url"/>
+        <p-button icon="pi pi-check" (click)="updateUrl()" styleClass="p-button-text p-button-success"></p-button>
+    </ng-template>
+</p-overlayPanel>
+
+<!--END-->
     <div class="row">
         <p-card styleClass="left-card">
             <div style="text-align: center;">
-                <img src="assets/img/avatars/t.jpg" alt="Avatar" 
-                    style="border-radius: 50%; width: 170px; height: 160px;">
+                <button (click)="op.toggle($event)" style="border-radius: 50%;">
+                <img src="{{display_image_url}}" alt="Avatar" 
+                    style="border-radius: 50%; width: 190px; height: 180px;">
+                </button>
                 <br><br>
                 <h3 class="text-black d-block"><b>{{user_info[0].first_name}} {{user_info[0].last_name}}</b></h3>
                 <span class="d-block">{{user_info[0].country}}</span>
@@ -34,6 +48,7 @@
                 tooltipPosition="right" pInputTextarea autoResize="true"></textarea> -->
                 <p-card styleClass="notes">
                     <ng-template pTemplate="header">
+                        <span class="notes-heading">TODO LIST</span>
                         <div class="notes-icons">
                             <button pButton pRipple type="button" icon="pi pi-plus"
                                 class="p-button-rounded p-button-text p-button-lg"

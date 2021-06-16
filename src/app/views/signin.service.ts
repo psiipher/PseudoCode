@@ -13,6 +13,14 @@ export class SigninService {
   private _todoUrl = "http://localhost:5000/api/todo";
   private _newsUrl = "http://localhost:5000/api/news"
   private _editInfoUrl = "http://localhost:5000/api/editinfo";
+
+  loggedIn() {
+    if (localStorage.getItem('username') === "") {
+      return false;
+    }
+    return !!localStorage.getItem('username');
+  }
+
   RegisterUser(user)
   {
     return this.http.post<any>(this._registerUrl,user);

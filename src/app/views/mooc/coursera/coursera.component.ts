@@ -18,11 +18,12 @@ export class CourseraComponent implements OnInit {
   position;
   resString;
   titleArray = "";
-  urlArray = "";
+  urlArray;
   platformArray = "";
   cols_recommender: any[];
-
+  ic : string = "pi pi-search";
   recommender_obj: any[];
+  name: string = "";
 
   constructor( private moocService: MoocService, private toastr: ToastrService) { }
 
@@ -47,25 +48,25 @@ export class CourseraComponent implements OnInit {
 
   styleObject(field): Object {
     if (field === "url" ){
-        return {width: '50px'}
+        return {width: '30px'}
     }
 
     else if (field === 'level') {
-      return {width: '80px'}
+      return {width: '60px'}
     }
 
     else if (field === 'course_title') {
-      return {width: '180px'}
+      return {width: '150px'}
     }
     else if (field === 'organization') {
-      return {width: '100px'}
+      return {width: '80px'}
     }
     return {}
   }
 
   styleRecommender(field): Object {
     if (field === "course_title" ){
-        return {width: '100px'}
+        return {width: '140px'}
     }
 
     else if (field === 'url') {
@@ -73,15 +74,20 @@ export class CourseraComponent implements OnInit {
     }
 
     else if (field === 'platform') {
-      return {width: '60px'}
+      return {width: '50px'}
     }
 
     return {}
   }
 
+  change_ic(ic:string){
+    this.ic = ic;
+  }
+
   getRecommendation() {
     this.moocService.getRecommendation().subscribe(
       res => {
+        this.ic = 'pi pi-search';
         if(res == null) {
           this.toastr.error('Sorry! No recommendations available for this course.');
         }
@@ -90,6 +96,9 @@ export class CourseraComponent implements OnInit {
           this.titleArray = this.resString[0].split(",");
           this.urlArray = this.resString[1].split(",");
           this.platformArray = this.resString[2].split(",");
+          for(let i = 0; i < this.urlArray.length; i++) {
+            this.urlArray[i] = this.urlArray[i].trim();
+          }
           this.recommender_obj = [{a: this.titleArray, b: this.urlArray, c:this.platformArray}];
           this.sidebar = true;
           this.position = 'right';
@@ -102,6 +111,7 @@ export class CourseraComponent implements OnInit {
 
   selectTitle(course) {
     this.title_obj = {title: course.course_title};
+    this.name = course.course_title;
     this.moocService.title_post(this.title_obj).subscribe(
       res => {
         this.getRecommendation();

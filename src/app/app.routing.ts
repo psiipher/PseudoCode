@@ -9,6 +9,8 @@ import { P500Component } from './views/error/500.component';
 import { LoginComponent } from './views/login/login.component';
 import { RegisterComponent } from './views/register/register.component';
 
+import { RouterGuardGuard } from './views/router-guard.guard';
+
 export const routes: Routes = [
   {
     path: '',
@@ -51,48 +53,24 @@ export const routes: Routes = [
     },
     children: [
       {
-        path: 'base',
-        loadChildren: () => import('./views/base/base.module').then(m => m.BaseModule)
-      },
-      {
         path: 'code',
-        loadChildren: () => import('./views/code/code.module').then(m => m.CodeModule)
+        loadChildren: () => import('./views/code/code.module').then(m => m.CodeModule),
+        canActivate: [RouterGuardGuard]
       },
       {
         path: 'learn',
-        loadChildren: () => import('./views/learn/learn.module').then(m => m.LearnModule)
+        loadChildren: () => import('./views/learn/learn.module').then(m => m.LearnModule),
+        canActivate: [RouterGuardGuard]
       },
       {
         path: 'mooc',
-        loadChildren: () => import('./views/mooc/mooc.module').then(m => m.MoocModule)
-      },
-      {
-        path: 'buttons',
-        loadChildren: () => import('./views/buttons/buttons.module').then(m => m.ButtonsModule)
-      },
-      {
-        path: 'charts',
-        loadChildren: () => import('./views/chartjs/chartjs.module').then(m => m.ChartJSModule)
+        loadChildren: () => import('./views/mooc/mooc.module').then(m => m.MoocModule),
+        canActivate: [RouterGuardGuard]
       },
       {
         path: 'dashboard',
-        loadChildren: () => import('./views/dashboard/dashboard.module').then(m => m.DashboardModule)
-      },
-      {
-        path: 'icons',
-        loadChildren: () => import('./views/icons/icons.module').then(m => m.IconsModule)
-      },
-      {
-        path: 'notifications',
-        loadChildren: () => import('./views/notifications/notifications.module').then(m => m.NotificationsModule)
-      },
-      {
-        path: 'theme',
-        loadChildren: () => import('./views/theme/theme.module').then(m => m.ThemeModule)
-      },
-      {
-        path: 'widgets',
-        loadChildren: () => import('./views/widgets/widgets.module').then(m => m.WidgetsModule)
+        loadChildren: () => import('./views/dashboard/dashboard.module').then(m => m.DashboardModule),
+        canActivate: [RouterGuardGuard]
       }
     ]
   },

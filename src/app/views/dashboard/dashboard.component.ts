@@ -12,6 +12,8 @@ export class DashboardComponent implements OnInit, AfterViewInit {
   text: string;
   displayModal: boolean;
   position: string;
+  display_image_url : string = "assets/img/addImage.png";
+  image_url : string;
 
   user_info: any = {0: []};
   username: string;
@@ -28,6 +30,7 @@ export class DashboardComponent implements OnInit, AfterViewInit {
     this.username = localStorage.getItem('username');
     this.news_get();
     this.userInfo_get();
+    this.display_image_url = localStorage.getItem('image_url');
   }
 
   ngAfterViewInit() {
@@ -46,6 +49,14 @@ export class DashboardComponent implements OnInit, AfterViewInit {
     this.displayModal = true;
   }   
 
+  //IMAGE 
+
+  updateUrl() {
+    this.display_image_url = this.image_url;
+    this.image_url = "";
+    localStorage.setItem('image_url', this.display_image_url);
+  }
+
   //USER_INFO 
   userInfo_get() {
     this._service.editInfo_get(this.username).subscribe(      
@@ -62,7 +73,6 @@ export class DashboardComponent implements OnInit, AfterViewInit {
         this.todo_list = res[0].todo_list.split(",");
     },
     err => {
-      console.log(err);
     });
   }
 
